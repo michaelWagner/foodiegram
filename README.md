@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: http://flux-capacitr.herokuapp.com
+[heroku]: http://foodiegram.herokuapp.com/
 
 ## Minimum Viable Product
 Foodiegram is a clone of Instagram built on Rails and Backbone. Users can:
