@@ -5,20 +5,24 @@
 [heroku]: http://flux-capacitr.herokuapp.com
 
 ## Minimum Viable Product
-Flux-capacitr is a clone of Tumblr built on Rails and Backbone. Users can:
+Foodiegram is a clone of Instagram built on Rails and Backbone. Users can:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [x] Create accounts
-- [x] Create sessions (log in)
-- [x] Create blogs
-- [x] Create blog posts
-- [ ] View blogs and posts
-- [ ] Subscribe to blogs
-- [ ] View a feed of subscribed blogs
-- [ ] Tag blog posts
-- [ ] Search for blogs by title
-- [ ] Search for posts by tag
+- [ ] Create accounts
+- [ ] Create sessions (log in)
+- [ ] Sign in as a guest
+- [ ] Upload pictures
+- [ ] Edit pictures
+- [ ] Create posts
+- [ ] View own posts
+- [ ] Subscribe to users
+- [ ] View a feed of subscribed user posts
+- [ ] Tag users
+- [ ] Tag places
+- [ ] Hashtag
+- [ ] Search for posts by hashtag
+- [ ] Search for posts by user
 
 ## Design Docs
 * [View Wireframes][views]
@@ -74,12 +78,8 @@ collections, but they will fetch from the new `search` routes.
 
 ### Bonus Features (TBD)
 - [ ] "Like" button and counter for posts
-- [ ] Custom blog urls
 - [ ] Pagination/infinite scroll
-- [ ] Activity history (e.g. likes, reblogs, taggings)
-- [ ] Post types (image posts, quote posts, etc)
-- [ ] Reblogging
-- [ ] Multiple sessions/session management
+- [ ] Activity history (e.g. likes, taggings)
 - [ ] User avatars
 - [ ] Typeahead search bar
 
@@ -88,4 +88,3 @@ collections, but they will fetch from the new `search` routes.
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
-
