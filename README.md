@@ -1,4 +1,4 @@
-# Flux-capacitr
+# Foodiegram
 
 [Heroku link][heroku]
 
