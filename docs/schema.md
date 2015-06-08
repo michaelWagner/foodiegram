@@ -1,10 +1,12 @@
 # Schema Information
 
-## feed
+## comments
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-owner_id    | integer   | not null, foreign key (references users)
+author_id   | integer   | not null, foreign key (references users)
+post_id     | string    | not null, foreign key (references posts)
+body        | string    |
 
 ## followings
 column name | data type | details
