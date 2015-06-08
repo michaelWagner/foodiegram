@@ -1,22 +1,22 @@
-# Phase 1: User Authentication, Basic Blogs and Posts
+# Phase 1: User Authentication, Basic Feed and Posts
 
 ## Rails
 ### Models
 * User
-* Blog
+* Feed
 * Post
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* BlogsController (create, new, show)
+* FeedsController (create, new, show)
 * PostsController (create, new, show)
 
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* blogs/new.html.erb
-* blogs/show.html.erb
+* feed/new.html.erb
+* feed/show.html.erb
 
 ## Backbone
 ### Models

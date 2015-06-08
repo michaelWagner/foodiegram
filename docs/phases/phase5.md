@@ -1,13 +1,13 @@
-# Phase 5: Searching for Blogs and Posts
+# Phase 5: User Liking and Commenting
 
 ## Rails
 ### Models
 
 ### Controllers
-Api::BlogsController (search)
-Api::PostsController (search)
+Api::PostsController (feed)
 
 ### Views
+posts/index.json.jbuilder
 
 ## Backbone
 ### Models
@@ -15,8 +15,6 @@ Api::PostsController (search)
 ### Collections
 
 ### Views
-* BlogSearchItem
-* SearchShow (composite view, contains BlogsIndex and PostsIndex subviews)
+* PostIndex (composite view, contains PostsIndexItem subviews)
 
 ## Gems/Libraries
-

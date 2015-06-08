@@ -85,4 +85,5 @@ production:
   <<: *default
   database: foodiegram_production
   username: foodiegram
+  url: postgres://gvyqnzpuknrgjp:-AtPT8bp4NMrRPcP9L8BQ18fWa@ec2-54-83-25-238.compute-1.amazonaws.com:5432/d6e1c6og2cdimn
   password: <%= ENV['FOODIEGRAM_DATABASE_PASSWORD'] %>

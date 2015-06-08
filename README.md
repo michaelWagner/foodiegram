@@ -33,52 +33,40 @@ Foodiegram is a clone of Instagram built on Rails and Backbone. Users can:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Blog Creation (~1 day)
-I will implement user authentication in Rails based on the practices learned at
-App Academy. By the end of this phase, users will be able to create blogs using
-a simple text form in a Rails view. The most important part of this phase will
-be pushing the app to Heroku and ensuring that everything works before moving on
+### Phase 1: User Authentication (~1 day)
+I will implement user authentication in Rails based on the practices learned at App Academy. By the end of this phase, users will be able to sign in/create accounts or sign in as a guest. I will be pushing the app to Heroku and ensuring that everything works before moving on
 to phase 2.
 
 [Details][phase-one]
 
-### Phase 2: Viewing Blogs and Posts (~2 days)
-I will add API routes to serve blog and post data as JSON, then add Backbone
-models and collections that fetch data from those routes. By the end of this
-phase, users will be able to create blogs and view both blogs and posts, all
-inside a single Backbone app.
+### Phase 2: Viewing Feeds and Posts (~2 days)
+I will add API routes to serve feed and post data as JSON, then add Backbone models and collections that fetch data from those routes. I'll start by adding a `feed` route that uses the `current_user`'s `subscribed_blogs` association to serve a list of blog posts ordered chronologically. On the Backbone side, I'll make a `FeedShow` view whose `posts` collection fetches from the new route. Ultimately, this will be the page users see after logging in.
+
 
 [Details][phase-two]
 
 ### Phase 3: Editing and Displaying Posts (~2 days)
 I plan to use third-party libraries to add functionality to the `PostForm` and
-`PostShow` views in this phase. First I'll need to add a Markdown editor to the
-`PostForm`, and make sure that the Markdown is properly escaped and formatted in
-the `PostShow` view. I also plan to integrate Filepicker for file upload so
-users can add images to blog posts.
+`PostShow` views in this phase. First I'll add Filepicker for the file uploads so that users can add images to their feed. Also, I will add pixlr so that users can edit a picture before uploading.
 
 [Details][phase-three]
 
-### Phase 4: User Feeds (~1-2 days)
-I'll start by adding a `feed` route that uses the `current_user`'s
-`subscribed_blogs` association to serve a list of blog posts ordered
-chronologically. On the Backbone side, I'll make a `FeedShow` view whose `posts`
-collection fetches from the new route.  Ultimately, this will be the page users
-see after logging in.
+### Phase 4: User Profile Page (~1-2 days)
+This page will serve as an index of all of the user's posts while also showing their name, description and avatar image.
 
 [Details][phase-four]
 
-### Phase 5: Searching for Blogs and Posts (~2 days)
-I'll need to add `search` routes to both the Blogs and Posts controllers. On the
-Backbone side, there will be a `SearchResults` composite view has `BlogsIndex`
-and `PostsIndex` subviews. These views will use plain old `blogs` and `posts`
-collections, but they will fetch from the new `search` routes.
+### Phase 5: User Liking and Commenting (~1.5 days)
+Users will be able to like/unlike posts as well as add comments by the end of this phase. These should be able to be accomplished from either the show or the feed page.
 
 [Details][phase-five]
 
 ### Bonus Features (TBD)
-- [ ] "Like" button and counter for posts
 - [ ] Pagination/infinite scroll
+- [ ] Searching for Users and Posts
+- [ ] Post author food rating
+- [ ] Fancy photo editing
+- [ ] Geotagging and maps
 - [ ] Activity history (e.g. likes, taggings)
 - [ ] User avatars
 - [ ] Typeahead search bar
@@ -88,3 +76,4 @@ collections, but they will fetch from the new `search` routes.
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
+[phase-six]: ./docs/phases/phase6.md

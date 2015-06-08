@@ -1,4 +1,4 @@
-# Phase 3: Editing and Displaying Posts
+# Phase 3: Uploading Photos for Posts
 
 ## Rails
 ### Models
@@ -17,5 +17,4 @@
 
 ## Gems/Libraries
 * Filepicker
-* Markdown-js
-* Bootstrap Markdown
+* Pixlr
