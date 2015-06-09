@@ -1,17 +1,25 @@
-<h1>Sign Up</h1>
+<div class="splash-page-form">
 
-<form action="/users" method="post">
-  <input type="hidden"
-         name="authenticity_token"
-         value="<%= form_authenticity_token %>">
+  <h1>Sign Up</h1>
 
-  <label>Username<br>
-    <input type="text" name="user[username]"><br>
-  </label><br>
+  <form action="/users" method="post">
+    <input type="hidden"
+           name="authenticity_token"
+           value="<%= form_authenticity_token %>">
 
-  <label>Password<br>
-    <input name="user[password]" type="password"><br>
-  </label><br>
+    <label>Username
+      <input type="text" name="user[username]"><br>
+    </label><br>
 
-  <input type="submit" value="Submit"><br>
-</form>
+    <label>Password
+      <input name="user[password]" type="password"><br>
+    </label><br>
+
+    <input type="submit" value="Submit"><br>
+  </form>
+
+
+  <%= button_to "Sign in as a guest!", users_url, class: 'guest-sign-in-button' %>
+
+  <!-- <button type="button" class="guest-sign-in-button" name="button">Sign in as a guest!</button> -->
+</div>
