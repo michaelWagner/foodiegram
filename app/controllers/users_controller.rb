@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = user_params ? User.new(user_params) : User.new_guest
+    @user = User.new(user_params)
     if @user.save
       sign_in!(@user)
       render :show
