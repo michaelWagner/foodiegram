@@ -1,8 +1,28 @@
-<div class="welcome-container">
-  <div class="login-container">
-    <form class="auth-form" action="index.html" method="post">
-      <input type="text" name="user[username]" value="<%= @user.username %>">
-      <input type="password" name="user[password]" value="">
-      <input type="submit" name="name" value="Submit">
-    </form>
-  </div>
+<!-- <h1>Sign up!</h1>
+
+<ul>
+  <% @user.errors.full_messages.each do |error_msg| %>
+    <li><%= error_msg %></li>
+  <% end %>
+</ul>
+
+<form class="login-form" action="/users" method="POST">
+  <input type="hidden"
+         name="authenticity_token"
+         value="<%= form_authenticity_token %>">
+
+  <label for="user-username">Username</label>
+  <input type="text"
+         name="user[username]"
+         id="user-username"
+         value="<%= @user.username %>">
+  <br>
+
+  <label for="user-password">Password</label>
+  <input type="password"
+         name="user[password]"
+         value="">
+  <br>
+
+  <input type="submit" name="name" value="Create User">
+</form> -->

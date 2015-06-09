@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  root 'root#index'
+  root to: 'static_pages#root'
+
+  resources :users
+  resource :session
 end
