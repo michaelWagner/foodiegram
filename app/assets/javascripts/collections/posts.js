@@ -2,12 +2,6 @@ Foodiegram.Collections.Posts = Backbone.Collection.extend({
   url: 'api/posts',
   model: Foodiegram.Models.Post,
 
-  // initialize: function(options) {
-  //   if (options.user) {
-  //     this.user = options.user;
-  //   }
-  // },
-
   getOrFetch: function(id) {
     var post = this.get(id);
 
@@ -16,7 +10,7 @@ Foodiegram.Collections.Posts = Backbone.Collection.extend({
       post.fetch({
         success: function() {
           this.add(post);
-        }
+        }.bind(this)
       });
     } else {
       post.fetch();

@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       redirect_to root
     else
       flash.now[:errors] = @user.errors.full_messages
-      # render :json => @user.errors.full_messages
+      render :new
     end
   end
 

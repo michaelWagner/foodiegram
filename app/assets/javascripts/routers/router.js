@@ -6,6 +6,7 @@ Foodiegram.Routers.Router = Backbone.Router.extend({
   routes: {
     "": "root",
     "posts": "postsIndex",
+    "posts/:id": "postShow",
     "users": "usersIndex",
     "users/:id": "usersShow"
 
