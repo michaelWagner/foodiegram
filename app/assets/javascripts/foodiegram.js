@@ -4,7 +4,14 @@ window.Foodiegram = {
   Views: {},
   Routers: {},
   initialize: function() {
-    // alert('Hello from Backbone!');
+    var router = new Foodiegram.Routers.Router({
+      $rootEl: $('#main')
+    });
+    var navbar = new Foodiegram.Views.NavbarView({
+      router: router
+    });
+
+    $('#navbar').html(navbar.render().$el);
   }
 };
 

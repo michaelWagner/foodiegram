@@ -36,7 +36,7 @@ to phase 2.
 [Details][phase-one]
 
 ### Phase 2: Viewing Feeds and Posts (~2 days)
-I will add API routes to serve feed and post data as JSON, then add Backbone models and collections that fetch data from those routes. I'll start by adding a `feed` route that uses the `current_user`'s `subscribed_blogs` association to serve a list of blog posts ordered chronologically. On the Backbone side, I'll make a `FeedShow` view whose `posts` collection fetches from the new route. Ultimately, this will be the page users see after logging in.
+I will add API routes to serve feed and post data as JSON, then add Backbone models and collections that fetch data from those routes. I'll start by adding a `feed` route that uses the `current_user`'s `followings` association to serve a list of posts ordered chronologically. On the Backbone side, I'll make a `FeedShow` view whose `posts` collection fetches from the new route. Ultimately, this will be the page users see after logging in.
 
 
 [Details][phase-two]

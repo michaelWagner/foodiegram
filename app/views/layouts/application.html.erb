@@ -8,6 +8,7 @@
 </head>
 <body>
 
+
 <% if flash[:errors] %>
   <div class="alert alert-warning alert-dismissible" role="alert">
      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -16,8 +17,10 @@
 <% end %>
 
 <% if signed_in? %>
-  <%= button_to "Sign out", session_url, method: :delete %>
-  <br>
+  <div id="navbar"></div>
+  <script>
+    ( window.CURRENT_USER_ID = <%= current_user.id %> );
+  </script>
 <% end %>
 
 
