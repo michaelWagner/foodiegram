@@ -12,9 +12,7 @@ window.Foodiegram = {
     });
 
     $('#navbar').html(navbar.render().$el);
+
+    Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  Foodiegram.initialize();
-});

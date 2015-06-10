@@ -1,9 +1,11 @@
 Foodiegram::Application.routes.draw do
   root to: 'static_pages#root'
 
-  resources :users do
+  resources :users, :only => :new
+  resource :session
+
+  namespace :api, defaults: { format: :json } do
+    resources :users, :except => :new
     resources :posts
   end
-
-  resource :session, :only => [:new, :create, :destroy]
 end

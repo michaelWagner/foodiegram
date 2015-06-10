@@ -1,0 +1,16 @@
+<% if flash[:errors] %>
+  <div class="alert alert-warning alert-dismissible" role="alert">
+     <button type="button" class="close" data-dismiss="alert">
+       <span aria-hidden="true">&times;</span>
+       <span class="sr-only">Close</span>
+      </button>
+  <%= flash[:errors].join("<br>").html_safe %>
+  </div>
+<% end %>
+
+<% if signed_in? %>
+  <div id="navbar"></div>
+  <script>
+    ( window.CURRENT_USER_ID = <%= current_user.id %> );
+  </script>
+<% end %>

@@ -1,33 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Foodiegram</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Foodiegram</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
+  <%= render partial: 'layouts/header' %>
+  <%= yield %>
 
-<% if flash[:errors] %>
-  <div class="alert alert-warning alert-dismissible" role="alert">
-     <button type="button" class="close" data-dismiss="alert">
-       <span aria-hidden="true">&times;</span>
-       <span class="sr-only">Close</span>
-      </button>
-  <%= flash[:errors].join("<br>").html_safe %>
-  </div>
-<% end %>
-
-<% if signed_in? %>
-  <div id="navbar"></div>
-  <script>
-    ( window.CURRENT_USER_ID = <%= current_user.id %> );
-  </script>
-<% end %>
-
-
-<%= yield %>
-
-</body>
+  </body>
 </html>

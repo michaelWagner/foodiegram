@@ -4,15 +4,20 @@ Foodiegram.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "": "index",
-    "posts/new": "new",
-    "posts/:id": "show",
-    "posts/:id/edit": "edit",
-    "feed/": "feedIndex",
-    "feed/:id": "feedShow"
+    "": "root",
+    "posts": "postsIndex",
+    "users": "usersIndex",
+    "users/:id": "usersShow"
+
+    // "users/:user_id/posts": "postsIndex",
+    // "users/:user_id/posts/new": "newPost",
+    // "users/:user_id/posts/:id": "postShow",
+    // "users/:user_id/posts/:id/edit": "postEdit",
+    // "feed/": "feedIndex",
+    // "feed/:id": "feedShow"
   },
 
-  index: function() {
+  postsIndex: function() {
     Foodiegram.Collections.posts.fetch();
     var postsIndex = new Foodiegram.Views.PostsIndex({
       collection: Foodiegram.Collections.posts
@@ -21,7 +26,7 @@ Foodiegram.Routers.Router = Backbone.Router.extend({
     this._swapView(postsIndex);
   },
 
-  new: function() {
+  newPost: function() {
     var post = new Foodiegram.Models.Post();
     var postForm = new Foodiegram.Views.PostForm({
       model: post,
@@ -31,7 +36,7 @@ Foodiegram.Routers.Router = Backbone.Router.extend({
     this._swapView(postForm);
   },
 
-  show: function(id) {
+  postShow: function(id) {
     var post = Foodiegram.Collections.posts.getOrFetch(id);
     var postShow = new Foodiegram.Views.PostShow({
       model: post

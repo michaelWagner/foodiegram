@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   attr_reader :password
   after_initialize :ensure_session_token
 
+  has_many :posts, class_name: "Post", foreign_key: :author_id, primary_key: :id
+  has_one :feed
+
   def self.find_by_credentials(user_params)
     user = User.find_by_username(user_params[:username])
     user.try(:is_password?, user_params[:password]) ? user : nil

@@ -1,0 +1,17 @@
+<ul class='posts'>
+
+  <% posts.each(function (post) { %>
+    <li>
+      <div class="posts-index-item ">
+        <img src="<%= post.get('image_url') %>" alt="" />
+        <a href="#/posts/<%= post.id %>">
+          <span class='shadow'></span>
+          <span class='details'>
+          </span>
+        </a>
+        <li><%= post.escape('author_id') %></li>
+      </div>
+    </li>
+  <% }); %>
+
+</ul>
