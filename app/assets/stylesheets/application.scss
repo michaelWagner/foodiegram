@@ -41,14 +41,22 @@
 }
 
 .posts {
-  height: 30%;
-  width: 38%;
+  height: 402px;
+  width: 402px;
   padding: 0;
   margin: auto;
-  border: 1px solid red;
+  // border-left: 1px solid #333333;
+  li {
+    list-style: none;
+  }
 }
 
 .posts-index-item {
   // padding: 40%;
   border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.body-username {
+  font-weight: bold;
 }

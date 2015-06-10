@@ -2,14 +2,11 @@
 
   <% posts.each(function (post) { %>
     <li>
+      <%= post.escape('author_id') %>
       <div class="posts-index-item ">
         <img src="<%= post.get('image_url') %>" alt="" />
-        <a href="#/posts/<%= post.id %>">
-          <span class='shadow'></span>
-          <span class='details'>
-          </span>
-        </a>
-        <li><%= post.escape('author_id') %></li>
+        <span class="body-username"><%= post.escape('author_id') %></span>
+        <%= post.escape('body') %>
       </div>
     </li>
   <% }); %>
