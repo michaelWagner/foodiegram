@@ -20,7 +20,7 @@
 
 .navbar > .container-fluid .navbar-brand {
   position: absolute;
-  margin-left: 35%;
+  margin-left: 0;
 }
 
 .logout-button {
@@ -31,4 +31,11 @@
   font-size: 1em;
   margin: 0;
   padding: 14px;
+}
+
+.navbar-brand {
+  background: url('foodiegram-logo.png') no-repeat top center;
+  background-size: 70%;
+  width: 266px;
+  height: 90px;
 }
