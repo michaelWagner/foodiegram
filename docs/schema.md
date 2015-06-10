@@ -5,7 +5,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users)
-post_id     | string    | not null, foreign key (references posts)
+post_id     | integer    | not null, foreign key (references posts)
 body        | string    |
 
 ## followings
@@ -22,7 +22,7 @@ id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users)
 image_url   | string    | not null
 title       | string    | not null
-body        | string    |
+body        | text      |
 
 ## tags
 column name | data type | details
