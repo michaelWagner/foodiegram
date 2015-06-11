@@ -5,7 +5,6 @@ Foodiegram.Models.User = Backbone.Model.extend({
     if (!this._posts) {
       this._posts = new Foodiegram.Collections.Posts([], { user: this });
     }
-
     return this._posts;
   },
 

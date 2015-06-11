@@ -1,8 +1,11 @@
 <div class="posts">
+
   <%= post.escape('author_id') %>
+  
   <div class="posts-index-item ">
     <img src="<%= post.get('image_url') %>" alt="" />
     <span class="body-username"><%= post.escape('author_id') %></span>
     <%= post.escape('body') %>
   </div>
+
 </div>

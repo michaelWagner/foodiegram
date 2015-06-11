@@ -3,7 +3,6 @@ Foodiegram.Collections.Users = Backbone.Collection.extend({
   model: Foodiegram.Models.User,
 
   getOrFetch: function(id) {
-    var users = this;
     var user = this.get(id);
 
     if (!user) {
@@ -18,7 +17,12 @@ Foodiegram.Collections.Users = Backbone.Collection.extend({
     }
 
     return user;
+  },
+
+  getUserName: function(id) {
+    return this.getOrFetch(id).escape('username');
   }
+
 });
 
 Foodiegram.Collections.users = new Foodiegram.Collections.Users();

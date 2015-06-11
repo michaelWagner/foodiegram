@@ -17,10 +17,14 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ a:hover {
+   text-decoration: none;
+ }
 
 .navbar > .container-fluid .navbar-brand {
   position: absolute;
   margin-left: 0;
+  height: 64px;
 }
 
 .logout-button {
@@ -37,7 +41,6 @@
   background: url('foodiegram-logo.png') no-repeat top center;
   background-size: 70%;
   width: 266px;
-  height: 90px;
 }
 
 .posts {
@@ -57,4 +60,24 @@
 
 .body-username {
   font-weight: bold;
+}
+
+.user-profile {
+  margin: auto;
+  width: 80%;
+}
+
+.user-header {
+  border: 1px solid black;
+  height: 400px;
+  border-bottom-right-radius:15px;
+  border-bottom-left-radius: 15px;
+  margin: -45px 0 0;
+}
+
+.user-profile-thumbnail-grid {
+  background-color: #999999;
+  height: 550px;
+  width: 80%;
+  margin: auto;
 }
