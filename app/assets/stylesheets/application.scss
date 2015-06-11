@@ -81,24 +81,26 @@
 
 .user-header {
   border: 1px solid #666;
-  height: 400px;
+  height: 242px;
   border-bottom-right-radius:15px;
   border-bottom-left-radius: 15px;
   margin: -45px 0 0;
 }
 
 .user-profile-thumbnail-grid {
-  background-color: #999999;
-  // height: 550px;
-  // width: 80%;
-  width: 786px;
+  background-color: #EFEFEF;
   margin: auto;
-  // position: relative;
+  border: 1px solid #666;
+  border-radius: 4px;
+
 }
 
-.profile-item {
-  padding: 70px;
-  margin: 6px;
+a.thumbnail.profile-item {
+  width: 21%;
+  background-color: #FFF;
+  margin: 1.2% -7% 0 7%;
   display: inline-block;
-  background-color: white;
+ img {
+    margin: 0;
+  }
 }

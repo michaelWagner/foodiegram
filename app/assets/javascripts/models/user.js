@@ -10,7 +10,7 @@ Foodiegram.Models.User = Backbone.Model.extend({
 
   parse: function (response) {
     if (response.posts) {
-      this.posts().set(response.posts, { parse: true });
+      this.posts().set(response.posts);
       delete response.posts;
     }
 
