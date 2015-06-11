@@ -1,7 +1,7 @@
 class Api::PostsController < ApplicationController
   def index
     @posts = Post.all
-    render :json => @posts
+    # render :json => @posts
   end
 
   def new
@@ -22,6 +22,6 @@ class Api::PostsController < ApplicationController
   def show
     # @post = Post.where(:author_id => params[:user_id]).find(params[:id])
     @post = Post.find(params[:id])
-    render :json => @post
+    # render :json => @post
   end
 end
