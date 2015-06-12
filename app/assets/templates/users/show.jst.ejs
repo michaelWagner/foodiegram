@@ -8,6 +8,9 @@
         @<%= user.escape('username') %>
       </span>
     </a>
+    <span class="user-profile-name">
+      <%= user.escape('name') %>
+    </span>
   </h3>
   <p class="user-bio">
     <%= user.escape('description') %>
