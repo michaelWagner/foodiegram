@@ -1,0 +1,22 @@
+<div class="new-post-form">
+
+  <div class="posts-index-item ">
+    <form class="post-form">
+      <p>
+        Drag an image to post:
+      </p>
+      <div class="new-post-placeholder">
+          <%= post.filepicker_field %>
+      </div>
+      <p>
+        Add a description:
+      </p>
+      <textarea name="post[description]"
+                class="post-form-description" rows="2" cols="54"></textarea>
+      <button type="submit" class="btn btn-success post-upload-button">
+        Post!
+      </button>
+    </form>
+  </div>
+
+</div>

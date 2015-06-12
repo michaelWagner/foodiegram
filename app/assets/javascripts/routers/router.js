@@ -6,6 +6,7 @@ Foodiegram.Routers.Router = Backbone.Router.extend({
   routes: {
     "": "root",
     "posts": "postsIndex",
+    "posts/new": "postNew",
     "posts/:id": "postShow",
     "users/:id": "userShow",
     "users/:id/edit": "userEdit",
@@ -34,11 +35,10 @@ Foodiegram.Routers.Router = Backbone.Router.extend({
     this._swapView(postShow);
   },
 
-  newPost: function() {
+  postNew: function() {
     var post = new Foodiegram.Models.Post();
     var postForm = new Foodiegram.Views.PostForm({
-      model: post,
-      collection: Foodiegram.Collections.posts
+      model: post
     });
 
     this._swapView(postForm);

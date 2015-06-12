@@ -120,6 +120,25 @@ a.thumbnail.profile-item {
   margin: auto;
 }
 
-.user-content-form {
+.new-post-form {
+  width: 425px;
+  margin: auto;
+}
+
+.post-form {
+  padding: 3%;
+}
+.new-post-placeholder {
+  border: 1px solid red;
+  width: 400px;
+  padding: 10%;
+}
+
+.post-form-description {
+  margin: auto;
+}
+
+.post-upload-button {
+  display: block;
   margin: auto;
 }
