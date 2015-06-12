@@ -22,7 +22,9 @@ module Foodiegram
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    
+
     config.assets.initialize_on_precompile = false
+
+    config.filepicker_rails.api_key = "AvC7z9BxTV6wa3wlqCpMwz"
   end
 end

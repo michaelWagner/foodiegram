@@ -11,7 +11,9 @@ gem 'jbuilder', '~> 1.2'
 gem 'rails', '4.2.0'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.0'
+gem 'filepicker-rails'
 gem 'uglifier', '>= 1.3.0'
+gem 'figaro'
 
 group :doc do
   gem 'sdoc', require: false
