@@ -8,6 +8,7 @@ Foodiegram.Routers.Router = Backbone.Router.extend({
     "posts": "postsIndex",
     "posts/:id": "postShow",
     "users/:id": "userShow",
+    "users/:id/edit": "userEdit",
     "users": "usersIndex"
   },
 
@@ -50,6 +51,15 @@ Foodiegram.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(userShow);
+  },
+
+  userEdit: function(id) {
+    var user = Foodiegram.Collections.users.getOrFetch(id);
+    var userEdit = new Foodiegram.Views.UserEdit({
+      model: user
+    });
+
+    this._swapView(userEdit);
   },
 
   _swapView: function(view) {
