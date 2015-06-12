@@ -8,11 +8,13 @@
         @<%= user.escape('username') %>
       </span>
     </a>
-    <p class="user-bio">
-      <%= user.escape('description') %>
-    </p>
   </h3>
-
+  <p class="user-bio">
+    <%= user.escape('description') %>
+  <button class="btn btn-primary edit-profile-button" type="button" name="edit-profile">
+    Edit Profile
+  </button>
+  </p>
   <div class="user-profile-thumbnail-grid">
     <div class="col-s-9 col-s-3">
       <% user.posts().each(function(post) { %>
