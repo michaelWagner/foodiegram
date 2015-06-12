@@ -11,12 +11,12 @@ Foodiegram is a clone of Instagram built on Rails and Backbone. Users can:
 
 - [x] Create accounts
 - [x] Create sessions (log in)
+- [x] View own posts
+- [x] View a feed of subscribed user posts
 - [ ] Create posts
 - [ ] Upload pictures
 - [ ] Edit Posts and pictures
-- [ ] View own posts
 - [ ] Subscribe to users
-- [ ] View a feed of subscribed user posts
 - [ ] Comment on posts
 - [ ] Tag users
 
@@ -36,7 +36,7 @@ to phase 2.
 [Details][phase-one]
 
 ### Phase 2: Viewing Feeds and Posts (~2 days)
-I will add API routes to serve feed and post data as JSON, then add Backbone models and collections that fetch data from those routes. I'll start by adding a `feed` route that uses the `current_user`'s `followings` association to serve a list of posts ordered chronologically. On the Backbone side, I'll make a `FeedShow` view whose `posts` collection fetches from the new route. Ultimately, this will be the page users see after logging in.
+I will add API routes to serve feed and post data as JSON, then add Backbone models and collections that fetch data from those routes. I'll start by adding a `posts` route that uses the `current_user`'s `followings` association to serve a list of posts ordered chronologically. On the Backbone side, I'll make a `postsIndex` view whose `posts` collection fetches from the new route. Ultimately, this will be the page users see after logging in.
 
 
 [Details][phase-two]

@@ -17,12 +17,7 @@ Foodiegram.Collections.Users = Backbone.Collection.extend({
     }
 
     return user;
-  },
-
-  getUserName: function(id) {
-    return this.getOrFetch(id).escape('username');
   }
-
 });
 
 Foodiegram.Collections.users = new Foodiegram.Collections.Users();

@@ -8,15 +8,18 @@
         @<%= user.escape('username') %>
       </span>
     </a>
+    <p class="user-bio">
+      <%= user.escape('description') %>
+    </p>
   </h3>
 
   <div class="user-profile-thumbnail-grid">
     <div class="col-s-9 col-s-3">
       <% user.posts().each(function(post) { %>
-        <a href="#" class="thumbnail profile-item">
+        <a href="#/posts/<%= post.id %>" class="thumbnail profile-item">
           <img src="<%= post.escape('image_url') %>" alt="" />
         </a>
       <% }); %>
-      <div>
+    </div>
   </div>
 </div>

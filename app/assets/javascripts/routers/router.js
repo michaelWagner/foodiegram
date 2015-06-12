@@ -9,13 +9,6 @@ Foodiegram.Routers.Router = Backbone.Router.extend({
     "posts/:id": "postShow",
     "users/:id": "userShow",
     "users": "usersIndex"
-
-    // "users/:user_id/posts": "postsIndex",
-    // "users/:user_id/posts/new": "newPost",
-    // "users/:user_id/posts/:id": "postShow",
-    // "users/:user_id/posts/:id/edit": "postEdit",
-    // "feed/": "feedIndex",
-    // "feed/:id": "feedShow"
   },
 
   root: function() {

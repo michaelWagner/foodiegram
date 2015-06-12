@@ -1,0 +1,16 @@
+<div class="post-header">
+  <a href="#/users/<%= post.escape('author_id') %>" alt="">
+    <%= post.escape('username') %>
+  </a>
+</div>
+<div class="posts-index-item ">
+  <img src="<%= post.escape('image_url') %>" alt="" />
+  <div class="post-footer">
+    <span class="body-username">
+      <a href="#/users/<%= post.escape('author_id') %>" alt="" >
+        @<%= post.escape('username') %>
+      </a>
+    </span>
+    <%= post.escape('body') %>
+  </div>
+</div>
