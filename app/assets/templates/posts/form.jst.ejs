@@ -6,12 +6,13 @@
         Drag an image to post:
       </p>
       <div class="new-post-placeholder">
-          <%= post.filepicker_field %>
+        <input type="filepicker" data-fp-apikey="AvC7z9BxTV6wa3wlqCpMwz" data-fp-mimetypes="image/*" data-fp-container="modal" data-fp-store-location="s3" data-fp-services="COMPUTER,DROPBOX,FACEBOOK,GITHUB,GOOGLE_DRIVE,FLICKR,GMAIL,INSTAGRAM,URL,WEBCAM" onchange="alert(event.fpfile.url)">
+        <button class="btn btn-primary add-image-button" type="button">Add an image</button>
       </div>
       <p>
         Add a description:
       </p>
-      <textarea name="post[description]"
+      <textarea name="description"
                 class="post-form-description" rows="2" cols="54"></textarea>
       <button type="submit" class="btn btn-success post-upload-button">
         Post!

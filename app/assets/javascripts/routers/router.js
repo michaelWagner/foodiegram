@@ -36,9 +36,11 @@ Foodiegram.Routers.Router = Backbone.Router.extend({
   },
 
   postNew: function() {
+    Foodiegram.Collections.posts.fetch();
     var post = new Foodiegram.Models.Post();
     var postForm = new Foodiegram.Views.PostForm({
-      model: post
+      model: post,
+      collection: Foodiegram.Collections.posts
     });
 
     this._swapView(postForm);

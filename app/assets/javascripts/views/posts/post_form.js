@@ -2,20 +2,45 @@ Foodiegram.Views.PostForm = Backbone.View.extend({
   template: JST['posts/form'],
 
   events: {
-    "click .post-upload-button": "upload"
+    "click .add-image-button": "upload"
   },
 
-  upload: function() {
+  upload: function(event) {
+    event.preventDefault();
     filepicker.pick(function(blob) {
-      var newImage = new Foodiegram.Models.Post({
-        image_url: blob.url
+      // var newImage = new Foodiegram.Models.Post({
+      //   image_url: blob.url
+      // });
+      this.model.set({
+        "author_id": CURRENT_USER_ID,
+        "image_url": blob.url,
       });
-      newImage.save({}, {
-        success: function() {
-          alert('image saved');
-        }
-      });
-    });
+      this.model.save();
+    }.bind(this));
+    Foodiegram.Collections.posts.add(this.model);
+    Backbone.history.navigate("#/posts" , { trigger: true })
+
+    // filepicker.setKey("AvC7z9BxTV6wa3wlqCpMwz");
+    //
+    // filepicker.pick(
+    //   {
+    //     mimetype: 'image/*',
+    //     container: 'window',
+    //     services: ['COMPUTER', 'FACEBOOK', 'CLOUDAPP']
+    //   },
+    //   function(Blob){
+    //     console.log(JSON.stringify(Blob));
+    //   },
+    //   function(FPError){
+    //     console.log(FPError.toString());
+    //   }
+    // );
+
+    // filepicker.pick(
+    //   function(Blob){
+    //     console.log(Blob.url);
+    //   }
+    // );
   },
 
   render: function() {
