@@ -1,0 +1,28 @@
+<div class="users-index-container">
+  <div class="foodiegram-search">
+    <form>
+      <input class="search-box" type="search" name="username" placeholder="Search">
+    </form>
+  </div>
+  <br>
+  <div class="search-by-options">
+    <span><a href="#">Pictures</a></span>
+    <span><a href="#">Users</a></span>
+  </div>
+
+
+  <div class="users-index">
+    <ul>
+      <hr>
+      <% users.each(function(user) { %>
+        <li class="user-index-item">
+          <a href="#/users/<%= user.id %>">
+            <h4 class="search-user-username"><%= user.escape('username') %></h4>
+          </a>
+          <span class="search-user-description"><%= user.escape('description') %></span>
+        </li>
+        <hr>
+      <% }); %>
+    </ul>
+  </div>
+</div>

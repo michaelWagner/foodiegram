@@ -6,6 +6,10 @@ Foodiegram.Views.PostForm = Backbone.View.extend({
     "click .add-image-button": "upload"
   },
 
+  initialize: function() {
+    this.listenTo(this.model, "sync", this.render);
+  },
+
   post: function(event) {
     event.preventDefault();
     var params = $(event.currentTarget).serializeJSON();
@@ -17,14 +21,17 @@ Foodiegram.Views.PostForm = Backbone.View.extend({
 
   upload: function(event) {
     event.preventDefault();
+    var that = this;
     var params = $(event.currentTarget).serializeJSON();
     filepicker.pick(function(blob) {
-      this.model.set({
+      that.model.set({
         "author_id": CURRENT_USER_ID,
         "image_url": blob.url
       });
-      this.model.save();
-    }.bind(this));
+      that.model.save();
+      // var newImage = $('<a href="blob.url">');
+      $('div.new-post').append($('<a href="<%= this.model.get("image_url") %>">'));
+    });
   },
 
   render: function() {
