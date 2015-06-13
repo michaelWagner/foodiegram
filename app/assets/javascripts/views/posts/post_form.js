@@ -2,45 +2,29 @@ Foodiegram.Views.PostForm = Backbone.View.extend({
   template: JST['posts/form'],
 
   events: {
+    "submit form": "post",
     "click .add-image-button": "upload"
+  },
+
+  post: function(event) {
+    event.preventDefault();
+    var params = $(event.currentTarget).serializeJSON();
+    this.model.set({"body": params.body});
+    this.model.save();
+    this.collection.add(this.model);
+    Backbone.history.navigate("#/posts" , { trigger: true });
   },
 
   upload: function(event) {
     event.preventDefault();
+    var params = $(event.currentTarget).serializeJSON();
     filepicker.pick(function(blob) {
-      // var newImage = new Foodiegram.Models.Post({
-      //   image_url: blob.url
-      // });
       this.model.set({
         "author_id": CURRENT_USER_ID,
-        "image_url": blob.url,
+        "image_url": blob.url
       });
       this.model.save();
     }.bind(this));
-    Foodiegram.Collections.posts.add(this.model);
-    Backbone.history.navigate("#/posts" , { trigger: true })
-
-    // filepicker.setKey("AvC7z9BxTV6wa3wlqCpMwz");
-    //
-    // filepicker.pick(
-    //   {
-    //     mimetype: 'image/*',
-    //     container: 'window',
-    //     services: ['COMPUTER', 'FACEBOOK', 'CLOUDAPP']
-    //   },
-    //   function(Blob){
-    //     console.log(JSON.stringify(Blob));
-    //   },
-    //   function(FPError){
-    //     console.log(FPError.toString());
-    //   }
-    // );
-
-    // filepicker.pick(
-    //   function(Blob){
-    //     console.log(Blob.url);
-    //   }
-    // );
   },
 
   render: function() {
