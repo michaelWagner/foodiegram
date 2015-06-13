@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require jquery.serializeJSON
+//= require moment
+//= require livestamp
 //= require underscore
 //= require backbone
 //= require foodiegram

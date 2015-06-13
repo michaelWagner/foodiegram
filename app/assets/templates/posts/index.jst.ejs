@@ -6,6 +6,7 @@
         <a href="#/users/<%= post.escape('author_id') %>" alt="">
           <%= post.escape('username') %>
         </a>
+        <span class="pull-right" data-livestamp="<%= post.escape('updated_at') %>"></span>
       </div>
       <div class="posts-index-item ">
         <a href="#/posts/<%= post.id %>" alt="<%= post.escape('body') %>">
