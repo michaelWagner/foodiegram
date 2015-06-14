@@ -9,7 +9,7 @@ Foodiegram.Collections.Users = Backbone.Collection.extend({
       user = new Foodiegram.Models.User ({ id: id });
       user.fetch({
         success: function() {
-          this.add(user);
+          this.add(user, { merge: true });
         }.bind(this)
       });
     } else {

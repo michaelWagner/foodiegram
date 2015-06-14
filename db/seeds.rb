@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(username: 'guest_user', password: 'password')
-User.create(username: 'mike', password: 'mikemike')
+User.create(username: 'guest_user', password: 'password', description: "A welcome guest")
+User.create(username: 'mike', password: 'mikemike', name: "Michael Wagner", description: "That guy")
 
 Post.create(
   author_id: 1,

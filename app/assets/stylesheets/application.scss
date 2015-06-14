@@ -135,6 +135,10 @@ a.thumbnail.profile-item {
   margin: auto;
 }
 
+.new-post {
+  padding-bottom: 5%;
+}
+
 .new-post-form {
   width: 425px;
   margin: auto;
@@ -143,6 +147,7 @@ a.thumbnail.profile-item {
 .post-form {
   padding: 3%;
 }
+
 .new-post-placeholder {
   padding: 2% 0 5%;
 }
@@ -154,6 +159,10 @@ a.thumbnail.profile-item {
 .post-upload-button {
   display: block;
   margin: auto;
+}
+
+.edit-post-page {
+  margin-top: -20px;
 }
 
 .edit-profile-button {
@@ -196,4 +205,8 @@ a.thumbnail.profile-item {
 
 .search-user-description {
   padding-left: 10%;
+}
+
+.post-edit-options {
+  padding: 5px;
 }

@@ -17,6 +17,10 @@
       </span>
       <%= post.escape('body') %>
     </div>
+    <div class="post-edit-options pull-right">
+      <a href="#/posts/<%= post.escape('id') %>/edit" class="edit-post">Edit Post</a>
+      <a href="#/posts/<%= post.escape('id') %>" class="delete-post">Delete Post</a>
+    </div>
   </div>
 
 </div>

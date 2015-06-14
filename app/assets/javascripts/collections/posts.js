@@ -20,7 +20,7 @@ Foodiegram.Collections.Posts = Backbone.Collection.extend({
       post = new Foodiegram.Models.Post({ id: id });
       post.fetch({
         success: function() {
-          this.add(post);
+          this.add(post, { at: 0, merge: true });
         }.bind(this)
       });
     } else {
