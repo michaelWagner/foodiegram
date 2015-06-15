@@ -50,7 +50,8 @@ Foodiegram.Routers.Router = Backbone.Router.extend({
   postEdit: function(id) {
     var post = Foodiegram.Collections.posts.getOrFetch(id);
     var postEditForm = new Foodiegram.Views.PostEdit({
-      model: post
+      model: post,
+      collection: Foodiegram.Collections.posts
     });
 
     this._swapView(postEditForm);

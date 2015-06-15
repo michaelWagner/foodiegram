@@ -156,10 +156,6 @@ a.thumbnail.profile-item {
   margin: auto;
 }
 
-.new-post {
-  padding-bottom: 5%;
-}
-
 .new-post-form {
   width: 425px;
   margin: auto;
@@ -171,6 +167,12 @@ a.thumbnail.profile-item {
 
 .new-post-placeholder {
   padding: 2% 0 5%;
+  overflow: hidden;
+  max-height: 400px;
+}
+
+.new-post {
+  padding-bottom: 5%;
 }
 
 .post-form-body {
@@ -189,6 +191,10 @@ a.thumbnail.profile-item {
 .edit-profile-button {
   position: relative;
   float: right;
+}
+
+.edit-image-button {
+  margin: 15px 0;
 }
 
 .users-index-container {

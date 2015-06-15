@@ -5,7 +5,7 @@ Foodiegram.Views.PostForm = Backbone.View.extend({
 
   events: {
     "submit form": "post",
-    "click .add-image-button": "upload"
+    "click .add-image-button": "uploadImage"
   },
 
   initialize: function() {
@@ -16,13 +16,15 @@ Foodiegram.Views.PostForm = Backbone.View.extend({
   post: function(event) {
     event.preventDefault();
     var params = $(event.currentTarget).serializeJSON();
+
     this.model.set(params);
     this.model.save();
+
     this.collection.add(this.model, { at: 0, merge: true });
     Backbone.history.navigate("#/posts" , { trigger: true });
   },
 
-  upload: function(event) {
+  uploadImage: function(event) {
     event.preventDefault();
     var that = this;
     var params = $(event.currentTarget).serializeJSON();
@@ -33,10 +35,6 @@ Foodiegram.Views.PostForm = Backbone.View.extend({
       });
       that.model.save();
     });
-    debugger
-    setTimeout(function() {
-      $('div.new-post').html($('img').attr('src', params.image_url));
-    }, 1500);
   },
 
   render: function() {

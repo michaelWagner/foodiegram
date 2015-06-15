@@ -7,9 +7,12 @@
       </p>
       <div class="new-post-placeholder">
         <div class="new-post">
-
+          <% if (post.get('image_url')) { %>
+            <img src="<%= post.escape('image_url') %>">
+          <% } %>
         </div>
         <input type="hidden"
+               name="post[image_url]"
                data-fp-apikey="AvC7z9BxTV6wa3wlqCpMwz"
                data-fp-mimetypes="image/*"
                data-fp-container="modal"
