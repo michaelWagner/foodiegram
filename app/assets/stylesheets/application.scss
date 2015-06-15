@@ -21,6 +21,12 @@
    text-decoration: none;
  }
 
+body {
+  background-color: #fafafa;
+}
+.navbar {
+  background-color: #ffffff;
+}
 .navbar > .container-fluid .navbar-brand {
   position: absolute;
   margin-left: 0;
@@ -51,7 +57,7 @@ li .logout-button:hover {
 
 .posts {
   height: 402px;
-  width: 402px;
+  width: 400px;
   padding: 0;
   margin: auto;
   li {
@@ -60,26 +66,31 @@ li .logout-button:hover {
 }
 
 .post-header {
-  border: 1px solid #666;
+  border: 1px solid #DCDCDC;
   box-sizing: border-box;
   padding: 13px;
+  background-color: #ffffff;
 }
 
-.post-footer {
-  box-sizing: border-box;
-  padding: 13px;
-  border-top: 1px solid #666;
-}
 .posts-index-item {
-  border: 1px solid #666;
+  border: 1px solid #DCDCDC;
   border-top: none;
   margin-bottom: 20px;
   overflow: hidden;
+  -webkit-box-shadow: 19px 15px 40px -19px rgba(102,102,102,0.59);
+  -moz-box-shadow: 19px 15px 40px -19px rgba(102,102,102,0.59);
+  box-shadow: 19px 15px 40px -19px rgba(102,102,102,0.59);
   a img {
     max-height: 400px;
   }
 }
 
+.post-footer {
+  box-sizing: border-box;
+  padding: 13px;
+  border-top: 1px solid #DCDCDC;
+  background-color: #ffffff;
+}
 .body-username {
   font-weight: bold;
 }

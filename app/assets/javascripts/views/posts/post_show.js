@@ -19,8 +19,7 @@ Foodiegram.Views.PostShow = Backbone.View.extend({
 
   editPost: function() {
     Backbone.history.navigate(
-      "#posts/" + this.model.id + "/edit",
-      { trigger: true }
+      "#posts/" + this.model.id + "/edit", { trigger: true }  
     );
   },
 
