@@ -7,17 +7,32 @@
     <label for="name">Name:</label><br>
     <input type="text"
            name="name"
-           value="<%= user.escape('name') %>"><br>
+           value="<%= user.escape('name') %>"><br><br>
 
     <label for="description">Description:</label><br>
     <input type="text"
            name="description"
-           value="<%= user.escape('description') %>">
-    <br><br>
+           value="<%= user.escape('description') %>"><br><br>
 
-    <!-- <label for="gravatar">Add your Gravatar:
-      <input type="text" name="gravatar_url" value="<%= user.escape('gravatar_url') %>">
-    </label> -->
+    <% if (user.get('profile_img_url')) { %>
+      <img src="<%= user.escape('profile_img_url') %>">
+    <% } %>
+
+    <label for="profile_img_url">Upload profile pic:</label><br>
+      <input type="hidden"
+             data-fp-apikey="AvC7z9BxTV6wa3wlqCpMwz"
+             data-fp-mimetypes="image/*"
+             data-fp-container="modal"
+             data-fp-image-dim="400, 400"
+             data-fp-maxSize="4194304"
+             data-fp-crop-dim="400, 400"
+             data-fp-image-quality="80"
+             data-fp-store-location="s3"
+             onchange="alert(event.fpfile.url)"
+             data-fp-services="COMPUTER,FACEBOOK,GOOGLE_DRIVE,FLICKR,INSTAGRAM,URL,WEBCAM">
+
+      <button class="btn btn-primary add-image-button" type="button">Choose image</button>
+    <br><br>
 
     <input class="btn btn-success user-profile-edit-submit" type="submit" value="Save edits">
   </form>
