@@ -15,7 +15,7 @@ Foodiegram.Routers.Router = Backbone.Router.extend({
   },
 
   root: function() {
-    Backbone.history.navigate("#/users/" + CURRENT_USER_ID, { trigger: true });
+    Backbone.history.navigate("#/posts", { trigger: true });
   },
 
   postsIndex: function() {

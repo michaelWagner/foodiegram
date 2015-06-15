@@ -17,13 +17,20 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- a:hover {
-   text-decoration: none;
- }
 
 body {
   background-color: #fafafa;
 }
+
+a:hover {
+   text-decoration: none;
+ }
+
+hr {
+  background-color: #ffffff;
+  width: 90%;
+}
+
 .navbar {
   background-color: #ffffff;
 }
@@ -74,6 +81,7 @@ li .logout-button:hover {
 
 .posts-index-item {
   border: 1px solid #DCDCDC;
+  background-color: #ffffff;
   border-top: none;
   margin-bottom: 20px;
   overflow: hidden;
@@ -88,6 +96,7 @@ li .logout-button:hover {
 .post-footer {
   box-sizing: border-box;
   padding: 13px;
+  padding-bottom: 0;
   border-top: 1px solid #DCDCDC;
   background-color: #ffffff;
 }
@@ -101,17 +110,18 @@ li .logout-button:hover {
 }
 
 .user-header {
-  border: 1px solid #666;
+  border: 1px solid #DCDCDC;
   height: 242px;
   border-bottom-right-radius:15px;
   border-bottom-left-radius: 15px;
   margin: -45px 0 0;
+  background-color: #ffffff;
 }
 
 .user-profile-thumbnail-grid {
-  background-color: #EFEFEF;
+  background-color: #ffffff;
   margin: auto;
-  border: 1px solid #666;
+  border: 1px solid #DCDCDC;
   border-radius: 4px;
 
 }
@@ -220,4 +230,34 @@ a.thumbnail.profile-item {
 
 .post-edit-options {
   padding: 5px;
+  color: #888;
+}
+
+.post-comment {
+
+}
+
+.post-like-box {
+  border: 1px solid #888;
+  margin-left: 13px;
+  width: 30px;
+  height: 30px;
+  background: url('heart-empty.png') no-repeat center;
+}
+
+.post-like-box:hover {
+  background: url('heart-red.png') no-repeat center;
+}
+
+.post-comment-field {
+  width: 80%;
+  padding: 0 20px;
+  line-height: 2.2em;
+  border: none;
+}
+
+.post-options-box {
+  // border: 1px solid #888;
+  // width: 30px;
+  // height: 30px;
 }
