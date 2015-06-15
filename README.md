@@ -15,7 +15,7 @@ Foodiegram is a clone of Instagram built on Rails and Backbone. Users can:
 - [x] View a feed of subscribed user posts
 - [x] Create posts
 - [x] Upload pictures
-- [ ] Edit Posts and pictures
+- [x] Edit Posts and pictures
 - [ ] Subscribe to users
 - [ ] Comment on posts
 - [ ] Tag users
@@ -43,7 +43,7 @@ I will add API routes to serve feed and post data as JSON, then add Backbone mod
 
 ### Phase 3: Editing and Displaying Posts (~2 days)
 I plan to use third-party libraries to add functionality to the `PostForm` and
-`PostShow` views in this phase. First I'll add Filepicker for the file uploads so that users can add images to their feed. Also, I will add pixlr so that users can edit a picture before uploading.
+`PostShow` views in this phase. I will add Filepicker.io for the file uploads so that users can add images to their feed. Users will be able to edit, delete, and create posts. 
 
 [Details][phase-three]
 
