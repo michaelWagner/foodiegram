@@ -90,6 +90,7 @@ li .logout-button:hover {
   box-shadow: 19px 15px 40px -19px rgba(102,102,102,0.59);
   a img {
     max-height: 400px;
+    width: 100%;
   }
 }
 
@@ -177,6 +178,9 @@ a.thumbnail.profile-item {
 
 .new-post {
   padding-bottom: 5%;
+  img {
+    width: 100%;
+  }
 }
 
 .post-form-body {

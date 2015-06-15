@@ -15,7 +15,17 @@ Foodiegram.Views.UserEdit = Backbone.View.extend({
     event.preventDefault();
     var that = this;
     var params = $(event.currentTarget).serializeJSON();
-    filepicker.pick(function(blob) {
+    filepicker.pick(
+      {
+        mimetype: 'image/*',
+        cropRatio: 1/1,
+        cropDim: [45, 45],
+        imageDim: [45, 45],
+        maxSize: "10485760",
+        cropForce: [45, 45],
+        services: ['COMPUTER', 'FACEBOOK', 'WEBCAM', 'INSTAGRAM', 'URL', 'GOOGLE_DRIVE', 'FLICKR', 'DROPBOX']
+      },
+      function(blob) {
       that.model.set({
         "profile_img_url": blob.url
       });
