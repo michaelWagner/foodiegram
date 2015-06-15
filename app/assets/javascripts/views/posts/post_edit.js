@@ -1,30 +1,18 @@
-Foodiegram.Views.PostForm = Backbone.View.extend({
-  template: JST['posts/form'],
+Foodiegram.Views.PostEdit = Backbone.View.extend({
+  template: JST['posts/edit'],
 
   className: 'edit-post-page',
 
   events: {
-    "submit form": "post",
-    "click .add-image-button": "uploadImage"
+    "click .save-edits": "saveEdits",
+    "click .edit-image-button": "changeImage"
   },
 
   initialize: function() {
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.model, "change", this.render);
   },
 
-  post: function(event) {
-    event.preventDefault();
-    var params = $(event.currentTarget).serializeJSON();
-
-    this.model.set(params);
-    this.model.save();
-
-    this.collection.add(this.model, { at: 0, merge: true });
-    Backbone.history.navigate("#/posts" , { trigger: true });
-  },
-
-  uploadImage: function(event) {
+  changeImage: function(event) {
     event.preventDefault();
     var that = this;
     var params = $(event.currentTarget).serializeJSON();
@@ -35,6 +23,17 @@ Foodiegram.Views.PostForm = Backbone.View.extend({
       });
       that.model.save();
     });
+  },
+
+  saveEdits: function(event) {
+    event.preventDefault();
+    var params = $(event.currentTarget).serializeJSON();
+
+    this.model.set(params);
+    this.model.save();
+
+    this.collection.add(this.model, { at: 0, merge: true });
+    Backbone.history.navigate("#/posts" , { trigger: true });
   },
 
   render: function() {

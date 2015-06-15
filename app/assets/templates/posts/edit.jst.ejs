@@ -3,16 +3,13 @@
   <div class="posts-index-item ">
     <form class="post-form">
       <p>
-        Add an image to post:
+        Edit image:
       </p>
       <div class="new-post-placeholder">
         <div class="new-post">
-          <% if (post.get('image_url')) { %>
-            <img src="<%= post.escape('image_url') %>">
-          <% } %>
+          <img src="<%= post.escape('image_url') %>"  alt=""/>
         </div>
         <input type="hidden"
-               name="post[image_url]"
                data-fp-apikey="AvC7z9BxTV6wa3wlqCpMwz"
                data-fp-mimetypes="image/*"
                data-fp-container="modal"
@@ -24,15 +21,15 @@
                onchange="alert(event.fpfile.url)"
                data-fp-services="COMPUTER,FACEBOOK,GOOGLE_DRIVE,FLICKR,INSTAGRAM,URL,WEBCAM">
 
-        <button class="btn btn-primary add-image-button" type="button">Add an image</button>
       </div>
+      <button class="btn btn-primary edit-image-button" type="button">Change image</button>
       <p>
-        Add a description:
+        Edit description:
       </p>
       <textarea name="body"
-                class="post-form-body" rows="2" cols="54"></textarea>
-      <button type="submit" class="btn btn-success post-upload-button">
-        Post!
+                class="post-form-body" rows="2" cols="54"><%= post.escape('body') %></textarea>
+      <button type="submit" class="save-edits btn btn-success post-upload-button">
+        Save edits!
       </button>
     </form>
   </div>

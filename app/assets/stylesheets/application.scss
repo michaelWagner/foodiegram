@@ -17,10 +17,23 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- a:hover {
+
+body {
+  background-color: #fafafa;
+}
+
+a:hover {
    text-decoration: none;
  }
 
+hr {
+  background-color: #ffffff;
+  width: 90%;
+}
+
+.navbar {
+  background-color: #ffffff;
+}
 .navbar > .container-fluid .navbar-brand {
   position: absolute;
   margin-left: 0;
@@ -34,7 +47,13 @@
   cursor: pointer;
   font-size: 1em;
   margin: 0;
-  padding: 14px;
+  padding: 1px 20px;
+  text-align: left;
+  width: 100%;
+}
+
+li .logout-button:hover {
+  background-color: #efefef;
 }
 
 .navbar-brand {
@@ -45,7 +64,7 @@
 
 .posts {
   height: 402px;
-  width: 402px;
+  width: 400px;
   padding: 0;
   margin: auto;
   li {
@@ -54,26 +73,33 @@
 }
 
 .post-header {
-  border: 1px solid #666;
+  border: 1px solid #DCDCDC;
   box-sizing: border-box;
   padding: 13px;
+  background-color: #ffffff;
 }
 
-.post-footer {
-  box-sizing: border-box;
-  padding: 13px;
-  border-top: 1px solid #666;
-}
 .posts-index-item {
-  border: 1px solid #666;
+  border: 1px solid #DCDCDC;
+  background-color: #ffffff;
   border-top: none;
   margin-bottom: 20px;
   overflow: hidden;
+  -webkit-box-shadow: 19px 15px 40px -19px rgba(102,102,102,0.59);
+  -moz-box-shadow: 19px 15px 40px -19px rgba(102,102,102,0.59);
+  box-shadow: 19px 15px 40px -19px rgba(102,102,102,0.59);
   a img {
     max-height: 400px;
   }
 }
 
+.post-footer {
+  box-sizing: border-box;
+  padding: 13px;
+  padding-bottom: 0;
+  border-top: 1px solid #DCDCDC;
+  background-color: #ffffff;
+}
 .body-username {
   font-weight: bold;
 }
@@ -84,17 +110,18 @@
 }
 
 .user-header {
-  border: 1px solid #666;
+  border: 1px solid #DCDCDC;
   height: 242px;
   border-bottom-right-radius:15px;
   border-bottom-left-radius: 15px;
   margin: -45px 0 0;
+  background-color: #ffffff;
 }
 
 .user-profile-thumbnail-grid {
-  background-color: #EFEFEF;
+  background-color: #ffffff;
   margin: auto;
-  border: 1px solid #666;
+  border: 1px solid #DCDCDC;
   border-radius: 4px;
 
 }
@@ -141,8 +168,15 @@ a.thumbnail.profile-item {
 .post-form {
   padding: 3%;
 }
+
 .new-post-placeholder {
   padding: 2% 0 5%;
+  overflow: hidden;
+  max-height: 400px;
+}
+
+.new-post {
+  padding-bottom: 5%;
 }
 
 .post-form-body {
@@ -154,7 +188,86 @@ a.thumbnail.profile-item {
   margin: auto;
 }
 
+.edit-post-page {
+  margin-top: -20px;
+}
+
 .edit-profile-button {
   position: relative;
   float: right;
+}
+
+.edit-image-button {
+  margin: 15px 0;
+}
+
+.users-index-container {
+  width: 400px;
+  margin: auto;
+}
+
+.foodiegram-search {
+  padding: 0 35%;
+  margin: auto;
+  border-radius: 25px;
+}
+
+.search-by-options {
+  margin: auto;
+  text-align: center;
+  a {
+    padding: 0 13%;
+    font-size:19px;
+  }
+
+}
+
+.users-index {
+
+}
+
+.user-index-item {
+  list-style: none;
+}
+
+.search-user-username {
+  display: inline-block;
+}
+
+.search-user-description {
+  padding-left: 10%;
+}
+
+.post-edit-options {
+  padding: 5px;
+  color: #888;
+}
+
+.post-comment {
+
+}
+
+.post-like-box {
+  border: 1px solid #888;
+  margin-left: 13px;
+  width: 30px;
+  height: 30px;
+  background: url('heart-empty.png') no-repeat center;
+}
+
+.post-like-box:hover {
+  background: url('heart-red.png') no-repeat center;
+}
+
+.post-comment-field {
+  width: 80%;
+  padding: 0 20px;
+  line-height: 2.2em;
+  border: none;
+}
+
+.post-options-box {
+  // border: 1px solid #888;
+  // width: 30px;
+  // height: 30px;
 }

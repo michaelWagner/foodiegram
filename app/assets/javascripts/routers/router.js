@@ -8,13 +8,14 @@ Foodiegram.Routers.Router = Backbone.Router.extend({
     "posts": "postsIndex",
     "posts/new": "postNew",
     "posts/:id": "postShow",
+    "posts/:id/edit": "postEdit",
+    "users": "usersIndex",
     "users/:id": "userShow",
-    "users/:id/edit": "userEdit",
-    "users": "usersIndex"
+    "users/:id/edit": "userEdit"
   },
 
   root: function() {
-    Backbone.history.navigate("#/users/" + CURRENT_USER_ID, { trigger: true });
+    Backbone.history.navigate("#/posts", { trigger: true });
   },
 
   postsIndex: function() {
@@ -44,6 +45,25 @@ Foodiegram.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(postForm);
+  },
+
+  postEdit: function(id) {
+    var post = Foodiegram.Collections.posts.getOrFetch(id);
+    var postEditForm = new Foodiegram.Views.PostEdit({
+      model: post,
+      collection: Foodiegram.Collections.posts
+    });
+
+    this._swapView(postEditForm);
+  },
+
+  usersIndex: function() {
+    Foodiegram.Collections.users.fetch();
+    var usersIndex = new Foodiegram.Views.UsersIndex({
+      collection: Foodiegram.Collections.users
+    });
+
+    this._swapView(usersIndex);
   },
 
   userShow: function(id) {

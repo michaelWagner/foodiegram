@@ -6,6 +6,7 @@
         <a href="#/users/<%= post.escape('author_id') %>" alt="">
           <%= post.escape('username') %>
         </a>
+        <span class="pull-right" data-livestamp="<%= post.escape('updated_at') %>"></span>
       </div>
       <div class="posts-index-item ">
         <a href="#/posts/<%= post.id %>" alt="<%= post.escape('body') %>">
@@ -18,6 +19,26 @@
             </a>
           </span>
           <%= post.escape('body') %>
+        </div>
+        <hr>
+        <div class="post-comment">
+          <form>
+            <a class="like-button" href="#" alt="like">
+              <div class="post-like-box pull-left"></div>
+            </a>
+            <input type="text"
+                   class="post-comment-field"
+                   name="post[comment]"
+                   placeholder="Add comment..."
+                   value="<%= post.escape('comment') %>">
+            <div class="post-options-box">
+              <div class="post-edit-options pull-right">
+                <a href="#/posts/<%= post.escape('id') %>/edit" class="edit-post">Edit</a>
+                  &nbsp;|&nbsp;
+                <a href="#/posts/<%= post.escape('id') %>" class="delete-post">Delete</a>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
 
