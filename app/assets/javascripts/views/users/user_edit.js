@@ -2,18 +2,25 @@ Foodiegram.Views.UserEdit = Backbone.View.extend({
   template: JST['users/edit'],
 
   events: {
-    "click .add-image-button": "changeProfileImage",
-    "submit form": "updateProfile"
+    "submit form": "updateProfile",
+    "click .add-image-button": "changeProfileImage"
+  },
+
+  initialize: function() {
+    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, "change", this.render);
   },
 
   changeProfileImage: function(event) {
     event.preventDefault();
+    var that = this;
+    var params = $(event.currentTarget).serializeJSON();
     filepicker.pick(function(blob) {
-      this.model.set({
-        "profile_image_url": blob.url
+      that.model.set({
+        "profile_img_url": blob.url
       });
-      this.model.save();
-    }.bind(this));
+      that.model.save();
+    });
   },
 
   updateProfile: function(event) {

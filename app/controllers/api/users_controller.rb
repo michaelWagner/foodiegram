@@ -23,6 +23,14 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    self.params[:user].permit(:username, :description, :name, :id, :created_at, :updated_at)
+    self.params[:user].permit(
+      :username,
+      :description,
+      :name,
+      :id,
+      :created_at,
+      :updated_at,
+      :profile_img_url
+    )
   end
 end

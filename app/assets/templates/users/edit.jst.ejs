@@ -14,20 +14,17 @@
            name="description"
            value="<%= user.escape('description') %>"><br><br>
 
-    <% if (user.get('profile_img_url')) { %>
-      <img src="<%= user.escape('profile_img_url') %>">
-    <% } %>
+    <div class="profile-image-preview">
+        <img src="<%= user.escape('profile_img_url') %>">
+    </div>
 
     <label for="profile_img_url">Upload profile pic:</label><br>
       <input type="hidden"
              data-fp-apikey="AvC7z9BxTV6wa3wlqCpMwz"
              data-fp-mimetypes="image/*"
              data-fp-container="modal"
-             data-fp-image-dim="400, 400"
-             data-fp-maxSize="4194304"
-             data-fp-crop-dim="400, 400"
-             data-fp-image-quality="80"
-             data-fp-store-location="s3"
+             data-fp-crop-dim="45, 45"
+             data-fp-crop-force="true"
              onchange="alert(event.fpfile.url)"
              data-fp-services="COMPUTER,FACEBOOK,GOOGLE_DRIVE,FLICKR,INSTAGRAM,URL,WEBCAM">
 
