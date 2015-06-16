@@ -3,6 +3,7 @@
 
   </div>
   <h3>
+    <img class="user-avatar" src="<%= user.escape('avatar_url') %>" alt="">
     <a href="#/users/<%= user.get('author.username') %>" alt="">
       <span class="foodiegram-username">
         @<%= user.escape('username') %>

@@ -30,7 +30,7 @@ class Api::UsersController < ApplicationController
       :id,
       :created_at,
       :updated_at,
-      :profile_img_url
+      :avatar_url
     )
   end
 end

@@ -1,2 +1,2 @@
 json.partial! @post
-json.(@post.author, :username)
+json.(@post.author, :username, :avatar_url)

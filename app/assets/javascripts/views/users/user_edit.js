@@ -22,12 +22,12 @@ Foodiegram.Views.UserEdit = Backbone.View.extend({
         cropDim: [45, 45],
         imageDim: [45, 45],
         maxSize: "10485760",
-        cropForce: [45, 45],
-        services: ['COMPUTER', 'FACEBOOK', 'WEBCAM', 'INSTAGRAM', 'URL', 'GOOGLE_DRIVE', 'FLICKR', 'DROPBOX']
+        // cropForce: [45, 45],
+        services: ['COMPUTER', 'FACEBOOK', 'WEBCAM', 'INSTAGRAM', 'URL', 'GOOGLE_DRIVE', 'FLICKR', 'DROPBOX', 'CONVERT']
       },
       function(blob) {
       that.model.set({
-        "profile_img_url": blob.url
+        "avatar_url": blob.url
       });
       that.model.save();
     });

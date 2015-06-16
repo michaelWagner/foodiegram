@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20150615202243) do
     t.datetime "updated_at"
     t.string   "description"
     t.string   "name"
-    t.string   "profile_img_url"
+    t.string   "avatar_url"
   end
 
   add_index "users", ["session_token"], name: "index_users_on_session_token", using: :btree

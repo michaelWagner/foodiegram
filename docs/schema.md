@@ -45,4 +45,4 @@ password_digest | string    | not null
 session_token   | string    | not null, unique
 description     | string    |
 name            | string    |
-profile_img_url | string    |
+avatar_url      | string    |
