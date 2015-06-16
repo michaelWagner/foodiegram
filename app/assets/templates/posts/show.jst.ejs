@@ -1,45 +1,43 @@
-<!-- <ul class="posts"> -->
-  <div class="post-header">
-    <% if (post.get('avatar_url')) { %>
-      <img class="user-avatar" src="<%= post.escape('avatar_url') %>" alt="">
-    <% } %>
-    <a href="#/users/<%= post.escape('author_id') %>" alt="">
-      <%= post.escape('username') %>
-    </a>
+<div class="post-header">
+  <% if (post.get('avatar_url')) { %>
+    <img class="user-avatar" src="<%= post.escape('avatar_url') %>" alt="">
+  <% } %>
+  <a href="#/users/<%= post.escape('author_id') %>" alt="">
+    <%= post.escape('username') %>
+  </a>
+</div>
+<div class="posts-index-item ">
+  <a href="#/posts/<%= post.id %>" alt="<%= post.escape('body') %>">
+    <img src="<%= post.escape('image_url') %>" alt="" />
+  </a>
+  <div class="post-footer">
+    <span class="body-username">
+      <a href="#/users/<%= post.escape('author_id') %>" alt="" >
+        @<%= post.escape('username') %>
+      </a>
+    </span>
+    <%= post.escape('body') %>
   </div>
-  <div class="posts-index-item ">
-    <a href="#/posts/<%= post.id %>" alt="<%= post.escape('body') %>">
-      <img src="<%= post.escape('image_url') %>" alt="" />
-    </a>
-    <div class="post-footer">
-      <span class="body-username">
-        <a href="#/users/<%= post.escape('author_id') %>" alt="" >
-          @<%= post.escape('username') %>
-        </a>
-      </span>
-      <%= post.escape('body') %>
-    </div>
-    <hr>
-    <div class="post-comment">
-      <form>
-        <% if (like.isNew()) { %>
-          <a class="post-like-box pull-left" data-id="<%= post.id %>" href=""></a>
-        <% } else { %>
-          <a class="post-like-box liked pull-left" data-id="<%= post.id %>" href=""></a>
-        <% } %>
-        <input type="text"
-               class="post-comment-field"
-               name="post[comment]"
-               placeholder="Add comment..."
-               value="<%= post.escape('comment') %>">
-        <div class="post-options-box">
-          <div class="post-edit-options pull-right">
-            <a href="#/posts/<%= post.escape('id') %>/edit" class="edit-post">Edit</a>
-              &nbsp;|&nbsp;
-            <a href="#/posts/<%= post.escape('id') %>" class="delete-post">Delete</a>
-          </div>
+  <hr>
+  <div class="post-comment">
+    <form>
+      <% if (like.isNew()) { %>
+        <a class="post-like-box pull-left" data-id="<%= post.id %>" href=""></a>
+      <% } else { %>
+        <a class="post-like-box liked pull-left" data-id="<%= post.id %>" href=""></a>
+      <% } %>
+      <input type="text"
+             class="post-comment-field"
+             name="post[comment]"
+             placeholder="Add comment..."
+             value="<%= post.escape('comment') %>">
+      <div class="post-options-box">
+        <div class="post-edit-options pull-right">
+          <a href="#/posts/<%= post.escape('id') %>/edit" class="edit-post">Edit</a>
+            &nbsp;|&nbsp;
+          <a href="#/posts/<%= post.escape('id') %>" class="delete-post">Delete</a>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
-<!-- </ul> -->
+</div>

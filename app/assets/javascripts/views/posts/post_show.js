@@ -3,6 +3,8 @@ Foodiegram.Views.PostShow = Backbone.View.extend({
 
   tagName: 'li',
 
+  className: 'post',
+
   events: {
     "click .post-like-box": "toggleLike",
     "click .edit-post": "editPost",
