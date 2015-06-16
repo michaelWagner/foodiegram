@@ -1,30 +1,29 @@
-Foodiegram.Views.PostsIndex = Backbone.View.extend({
+Foodiegram.Views.PostsIndex = Backbone.CompositeView.extend({
   template: JST['posts/index'],
 
-  className: 'posts-index',
-
-  events: {
-    "click .post-like-box": "toggleLike"
-  },
-
   initialize: function() {
-    this.listenTo(this.collection, "sync", this.render);
+    this.collection.each(this.addPostView.bind(this));
+    this.listenTo(this.collection, 'add', this.addPostView);
+    this.listenTo(this.collection, 'remove', this.removePostView);
   },
 
-  toggleLike: function (event) {
-    event.preventDefault();
-    var postId = $(event.currentTarget).attr('data-id');
-    var post = this.collection.get(postId);
-    post.toggleLike();
-    this.trigger('sync');
+  addPostView: function (post) {
+    var postView = new Foodiegram.Views.PostShow({
+      model: post
+    });
+    this.addSubview('.posts', postView);
+  },
+
+  removePostView: function (post) {
+    this.removeModelSubview('.posts', post);
   },
 
   render: function() {
     var content = this.template({
       posts: this.collection
     });
-
     this.$el.html(content);
+    this.attachSubviews();
     return this;
   }
 });

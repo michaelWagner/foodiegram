@@ -1,5 +1,6 @@
-Foodiegram.Views.PostShow = Backbone.View.extend({
-  template: JST['posts/show'],
+Foodiegram.Views.PostIndexItem = Backbone.View.extend({
+  template: JST['posts/post'],
+  // template: JST['posts/show'],
 
   tagName: 'li',
 
@@ -34,7 +35,6 @@ Foodiegram.Views.PostShow = Backbone.View.extend({
 
   render: function() {
     var content = this.template({
-      like: this.model.like(),
       post: this.model
     });
     this.$el.html(content);
