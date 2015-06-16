@@ -9,7 +9,6 @@ Foodiegram.Views.PostsIndex = Backbone.View.extend({
 
   initialize: function() {
     this.listenTo(this.collection, "sync", this.render);
-    this.listenTo(this.collection, 'toggleLike', this.render);
   },
 
   toggleLike: function (event) {
@@ -17,6 +16,7 @@ Foodiegram.Views.PostsIndex = Backbone.View.extend({
     var postId = $(event.currentTarget).attr('data-id');
     var post = this.collection.get(postId);
     post.toggleLike();
+    this.trigger('sync');
   },
 
   render: function() {
