@@ -5,8 +5,10 @@ class User < ActiveRecord::Base
   attr_reader :password
   after_initialize :ensure_session_token
 
-  has_many :posts, class_name: "Post", foreign_key: :author_id, primary_key: :id
   has_one :feed
+  has_many :posts, class_name: "Post", foreign_key: :author_id, primary_key: :id
+  has_many :likes
+  has_many :liked_posts, through: :likes, source: :post
 
   def self.find_by_credentials(user_params)
     user = User.find_by_username(user_params[:username])
@@ -26,6 +28,17 @@ class User < ActiveRecord::Base
     self.session_token = SecureRandom.urlsafe_base64
     self.save!
     self.session_token
+  end
+
+  def photo_likes_hash
+    zipped_likes = likes.pluck(:post_id).zip(likes)
+    likes_hash = {}
+
+    zipped_likes.each do |(id, like)|
+      likes_hash[id] = like
+    end
+
+    likes_hash
   end
 
   private

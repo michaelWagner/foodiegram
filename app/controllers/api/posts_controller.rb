@@ -1,6 +1,12 @@
 class Api::PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.includes(:likes)
+    if signed_in?
+      @likes_hash = current_user.post_likes_hash
+    else
+      @likes_hash = {}
+    end
+    render :index
   end
 
   def new
@@ -32,12 +38,21 @@ class Api::PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def show
+    @post = Post.includes(:likes).find(params[:id])
+    @likes_hash = {}
+    if signed_in?
+      @likes_hash[@post.id] = @post.likes.find_by(user_id: current_user.id)
+    end
+    render :show
+  end
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
     render json: {}
   end
-  
+
   private
 
   def post_params
