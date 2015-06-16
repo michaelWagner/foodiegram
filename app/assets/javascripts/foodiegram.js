@@ -1,4 +1,5 @@
 window.Foodiegram = {
+  Mixins: {},
   Models: {},
   Collections: {},
   Views: {},

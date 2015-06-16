@@ -1,12 +1,11 @@
 // Models extending this module must have a `likableOptions` property pointing
 // to an object with the following attributes:
-//   foreignKey (e.g., "photo_id")
+//   foreignKey (e.g., "post_id")
 
-LikesDemo.Mixins.Likable = {
+Foodiegram.Mixins.Likable = {
   like: function () {
     if (!this._like) {
-      // Parans may not be necessary here ->
-      this._like = new Foodiegram.Models.Like();
+      this._like = new Foodiegram.Models.Like;
     }
     return this._like;
   },
@@ -41,9 +40,9 @@ LikesDemo.Mixins.Likable = {
   },
 
   parseLike: function (payload) {
-    // Call this inside the model's #parse method.
     var attrs = {};
     attrs[this.likableOptions.foreignKey] = payload.id;
+    debugger
     this.like().set(attrs);
 
     if (payload.like) {
