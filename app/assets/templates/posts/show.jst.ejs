@@ -11,6 +11,24 @@
     <img src="<%= post.escape('image_url') %>" alt="" />
   </a>
   <div class="post-footer">
+    <div class="post-likes">
+      <% var num_post_likes = parseInt(post.escape('num_likes')) %>
+
+      <% if (post.attributes.likers && num_post_likes >= 10) { %>
+        <span><%= post.escape('num_likes') %> likes</span>
+      <% } %>
+
+      <% if (post.attributes.likers && num_post_likes < 10 && num_post_likes !== 0) { %>
+        <span class="post-likes-list">
+          <% post.attributes.likers.forEach(function(liker) {  %>
+            <a href="#/users/<%= liker.id %>"><%= liker.username %></a>
+            <% if (liker !== post.attributes.likers[post.attributes.likers.length-1]) { %>
+              , <!-- Add a comma if not the last liker in the list   -->
+            <% } %>
+          <% }); %>
+        </ul>
+      <% } %>
+    </div>
     <span class="body-username">
       <a href="#/users/<%= post.escape('author_id') %>" alt="" >
         @<%= post.escape('username') %>

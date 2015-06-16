@@ -44,7 +44,6 @@ Foodiegram.Models.Post = Backbone.Model.extend({
 
   updateLikeCount: function (delta) {
     this.set("num_likes", this.get("num_likes") + delta);
-    console.log(this.get('num_likes'));
   },
 
   parseLike: function (payload) {

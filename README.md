@@ -17,6 +17,7 @@ Foodiegram is a clone of Instagram built on Rails and Backbone. Users can:
 - [x] Upload pictures
 - [x] Edit Posts and pictures
 - [x] User avatars
+- [x] Like/Unlike posts
 - [ ] Subscribe to users
 - [ ] Comment on posts
 - [ ] Tag users
