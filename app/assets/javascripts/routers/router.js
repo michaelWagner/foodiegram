@@ -4,18 +4,13 @@ Foodiegram.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "": "root",
-    "posts": "postsIndex",
+    "": "postsIndex",
     "posts/new": "postNew",
     "posts/:id": "postShow",
     "posts/:id/edit": "postEdit",
     "users": "usersIndex",
     "users/:id": "userShow",
     "users/:id/edit": "userEdit"
-  },
-
-  root: function() {
-    Backbone.history.navigate("#/posts", { trigger: true });
   },
 
   postsIndex: function() {

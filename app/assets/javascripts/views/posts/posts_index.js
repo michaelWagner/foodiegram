@@ -3,8 +3,20 @@ Foodiegram.Views.PostsIndex = Backbone.View.extend({
 
   className: 'posts-index',
 
+  events: {
+    "click .post-like-box": "toggleLike"
+  },
+
   initialize: function() {
     this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, 'toggleLike', this.render);
+  },
+
+  toggleLike: function (event) {
+    event.preventDefault();
+    var postId = $(event.currentTarget).attr('data-id');
+    var post = this.collection.get(postId);
+    post.toggleLike();
   },
 
   render: function() {

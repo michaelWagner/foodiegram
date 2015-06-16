@@ -10,6 +10,7 @@ class Api::PostsController < ApplicationController
   end
 
   def new
+    # @post = Post.new
   end
 
   def create
@@ -17,7 +18,7 @@ class Api::PostsController < ApplicationController
     if @post.save
       render @post
     else
-      render :json => @post.errors, :status => :unprocessable_entity
+      render json: @post.errors, status: :unprocessable_entity
     end
   end
 
@@ -30,12 +31,8 @@ class Api::PostsController < ApplicationController
     if @post.update(post_params)
       render @post
     else
-      render :json => @post.errors, :status => :unprocessable_entity
+      render json: @post.errors, status: :unprocessable_entity
     end
-  end
-
-  def show
-    @post = Post.find(params[:id])
   end
 
   def show

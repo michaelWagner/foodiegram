@@ -5,7 +5,7 @@
 Foodiegram.Mixins.Likable = {
   like: function () {
     if (!this._like) {
-      this._like = new Foodiegram.Models.Like;
+      this._like = new Foodiegram.Models.Like();
     }
     return this._like;
   },
@@ -42,7 +42,6 @@ Foodiegram.Mixins.Likable = {
   parseLike: function (payload) {
     var attrs = {};
     attrs[this.likableOptions.foreignKey] = payload.id;
-    debugger
     this.like().set(attrs);
 
     if (payload.like) {

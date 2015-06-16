@@ -9,7 +9,7 @@ Foodiegram.Views.PostShow = Backbone.View.extend({
 
   initialize: function() {
     this.listenTo(this.model, "sync", this.render);
-    // this.listenTo(this.model, 'change:num_likes', this.render);
+    this.listenTo(this.model, 'change:num_likes', this.render);
     this.listenTo(this.model, "change", this.render);
   },
 
@@ -28,11 +28,11 @@ Foodiegram.Views.PostShow = Backbone.View.extend({
   toggleLike: function (event) {
     event.preventDefault();
     this.model.toggleLike();
-    $('a.post-like-box').toggleClass('liked');
   },
 
   render: function() {
     var content = this.template({
+      like: this.model.like(),
       post: this.model
     });
     this.$el.html(content);

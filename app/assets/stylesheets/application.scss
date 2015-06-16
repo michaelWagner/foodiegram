@@ -17,6 +17,14 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+html, body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 
 body {
   background-color: #fafafa;
@@ -79,9 +87,13 @@ li .logout-button:hover {
   background-color: #ffffff;
 }
 
-.posts-index-item {
+.post-style-mixin {
   border: 1px solid #DCDCDC;
   background-color: #ffffff;
+}
+
+.posts-index-item {
+  @extend .post-style-mixin;
   border-top: none;
   margin-bottom: 20px;
   overflow: hidden;

@@ -24,9 +24,9 @@
     <div class="post-comment">
       <form>
         <% if (like.isNew()) { %>
-          <a class="post-like-box pull-left" href=""></a>
+          <a class="post-like-box pull-left" data-id="<%= post.id %>" href=""></a>
         <% } else { %>
-          <a class="post-like-box liked pull-left" href=""></a>
+          <a class="post-like-box liked pull-left" data-id="<%= post.id %>" href=""></a>
         <% } %>
         <input type="text"
                class="post-comment-field"

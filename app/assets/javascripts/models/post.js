@@ -13,7 +13,7 @@ Foodiegram.Models.Post = Backbone.Model.extend(
 
     like: function () {
       if (!this._like) {
-        this._like = new Foodiegram.Models.Like;
+        this._like = new Foodiegram.Models.Like();
       }
       return this._like;
     },
@@ -51,7 +51,6 @@ Foodiegram.Models.Post = Backbone.Model.extend(
     parseLike: function (payload) {
       var attrs = {};
       attrs[this.likableOptions.foreignKey] = payload.id;
-      // debugger
       this.like().set(attrs);
 
       if (payload.like) {
