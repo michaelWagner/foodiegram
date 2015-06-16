@@ -3,7 +3,9 @@
   <% posts.each(function (post) { %>
     <li>
       <div class="post-header">
-        <img class="user-avatar" src="<%= post.escape('avatar_url') %>">
+        <% if (post.get('avatar_url')) { %>
+          <img class="user-avatar" src="<%= post.escape('avatar_url') %>">
+        <% } %>
         <a href="#/users/<%= post.escape('author_id') %>" alt="">
           <%= post.escape('username') %>
         </a>

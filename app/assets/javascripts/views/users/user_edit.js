@@ -22,7 +22,7 @@ Foodiegram.Views.UserEdit = Backbone.View.extend({
         cropDim: [45, 45],
         imageDim: [45, 45],
         maxSize: "10485760",
-        // cropForce: [45, 45],
+        cropForce: [45, 45],
         services: ['COMPUTER', 'FACEBOOK', 'WEBCAM', 'INSTAGRAM', 'URL', 'GOOGLE_DRIVE', 'FLICKR', 'DROPBOX', 'CONVERT']
       },
       function(blob) {
