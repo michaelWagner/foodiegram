@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
     self.session_token
   end
 
-  def photo_likes_hash
+  def post_likes_hash
     zipped_likes = likes.pluck(:post_id).zip(likes)
     likes_hash = {}
 

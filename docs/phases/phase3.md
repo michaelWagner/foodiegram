@@ -17,4 +17,3 @@
 
 ## Gems/Libraries
 * Filepicker
-* Pixlr
