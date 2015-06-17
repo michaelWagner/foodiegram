@@ -36,9 +36,9 @@
     </span>
     <%= post.escape('body') %>
   </div>
-  <div class="comments-list">
+  <div class="comments-container">
     <% if (post.comments().size() > 0) { %>
-      <ul>
+      <ul class="comments-list">
       <% post.comments().each(function(comment) { %>
           <li>
             <a href="#/users/<%= comment.escape('author_id') %>">
@@ -50,7 +50,7 @@
       </ul>
     <% } %>
   </div>
-  <hr>
+  <hr class="post-interactions-seperator">
   <div class="post-interactions">
       <% if (like.isNew()) { %>
         <a class="post-like-box pull-left" data-id="<%= post.id %>" href=""></a>

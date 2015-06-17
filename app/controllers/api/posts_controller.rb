@@ -39,7 +39,7 @@ class Api::PostsController < ApplicationController
   def show
     @post = Post.includes(:likes, :comments).find(params[:id])
     @likes_hash = {}
-    @comments = @posts.comments
+    @comments = @post.comments
     if signed_in?
       @likes_hash[@post.id] = @post.likes.find_by(user_id: current_user.id)
     end

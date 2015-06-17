@@ -34,12 +34,10 @@ Foodiegram.Models.Post = Backbone.Model.extend({
       {
         'body': comment.body,
         'post_id': this.id,
-        'author_id': CURRENT_USER_ID,
-        'author_username': CURRENT_USERNAME
+        'author_id': CURRENT_USER_ID
       }
     );
 
-    console.log(newComment)
     newComment.save();
     this.comments().add(newComment);
     this.save();
