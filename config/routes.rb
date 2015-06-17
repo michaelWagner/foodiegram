@@ -6,7 +6,8 @@ Foodiegram::Application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :users, :except => :new
-    resources :likes, only: [:create, :destroy]
     resources :posts
+    resources :likes, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy]
   end
 end

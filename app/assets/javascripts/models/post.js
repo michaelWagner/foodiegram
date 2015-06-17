@@ -6,7 +6,13 @@ Foodiegram.Models.Post = Backbone.Model.extend({
   },
 
   parse: function (payload) {
+    if (payload.comments) {
+      this.comments().set(payload.comments);
+      delete payload.comments;
+    }
+
     this.parseLike(payload);
+
     return payload;
   },
 
@@ -15,6 +21,28 @@ Foodiegram.Models.Post = Backbone.Model.extend({
       this._like = new Foodiegram.Models.Like();
     }
     return this._like;
+  },
+
+  comments: function () {
+    this._comments = this._comments ||
+      new Foodiegram.Collections.Comments([], { post: this });
+    return this._comments;
+  },
+
+  createComment: function(comment) {
+    var newComment = new Foodiegram.Models.Comment(
+      {
+        'body': comment.body,
+        'post_id': this.id,
+        'author_id': CURRENT_USER_ID,
+        'author_username': CURRENT_USERNAME
+      }
+    );
+
+    console.log(newComment)
+    newComment.save();
+    this.comments().add(newComment);
+    this.save();
   },
 
   createLike: function () {

@@ -1,6 +1,6 @@
 class Api::PostsController < ApplicationController
   def index
-    @posts = Post.includes(:likes)
+    @posts = Post.includes(:likes, :comments)
     if signed_in?
       @likes_hash = current_user.post_likes_hash
     else
@@ -15,6 +15,7 @@ class Api::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @comments = []
     if @post.save
       render @post
     else
@@ -36,8 +37,9 @@ class Api::PostsController < ApplicationController
   end
 
   def show
-    @post = Post.includes(:likes).find(params[:id])
+    @post = Post.includes(:likes, :comments).find(params[:id])
     @likes_hash = {}
+    @comments = @posts.comments
     if signed_in?
       @likes_hash[@post.id] = @post.likes.find_by(user_id: current_user.id)
     end

@@ -36,26 +36,40 @@
     </span>
     <%= post.escape('body') %>
   </div>
+  <div class="comments-list">
+    <% if (post.comments().size() > 0) { %>
+      <ul>
+      <% post.comments().each(function(comment) { %>
+          <li>
+            <a href="#/users/<%= comment.escape('author_id') %>">
+              <%= comment.escape('author_id') %>
+            </a>
+            <span><%= comment.escape('body') %></span>
+            </li>
+      <% }); %>
+      </ul>
+    <% } %>
+  </div>
   <hr>
-  <div class="post-comment">
-    <form>
+  <div class="post-interactions">
       <% if (like.isNew()) { %>
         <a class="post-like-box pull-left" data-id="<%= post.id %>" href=""></a>
       <% } else { %>
         <a class="post-like-box liked pull-left" data-id="<%= post.id %>" href=""></a>
       <% } %>
+    <form class="post-comment">
       <input type="text"
              class="post-comment-field"
-             name="post[comment]"
+             name="comment[body]"
              placeholder="Add comment..."
-             value="<%= post.escape('comment') %>">
-      <div class="post-options-box">
-        <div class="post-edit-options pull-right">
-          <a href="#/posts/<%= post.escape('id') %>/edit" class="edit-post">Edit</a>
-            &nbsp;|&nbsp;
-          <a href="#/posts/<%= post.escape('id') %>" class="delete-post">Delete</a>
-        </div>
-      </div>
+             value="">
     </form>
+    <div class="post-options-box">
+      <div class="post-edit-options pull-right">
+        <a href="#/posts/<%= post.escape('id') %>/edit" class="edit-post">Edit</a>
+          &nbsp;|&nbsp;
+        <a href="#/posts/<%= post.escape('id') %>" class="delete-post">Delete</a>
+      </div>
+    </div>
   </div>
 </div>

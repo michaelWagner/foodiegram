@@ -5,8 +5,8 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users)
-post_id     | integer    | not null, foreign key (references posts)
-body        | string    |
+post_id     | integer   | not null, foreign key (references posts)
+body        | string    | not null
 
 ## followings
 column name | data type | details
@@ -46,3 +46,12 @@ session_token   | string    | not null, unique
 description     | string    |
 name            | string    |
 avatar_url      | string    |
+
+## likes
+column name  | data type | details
+-------------|-----------|-----------------------
+id           | integer   | not null, primary key
+user_id      | integer   | not null, foreign key (references users)
+post_id      | integer   | not null, foreign key (references posts)
+created_at   | datetime  | not null
+updated_at   | datetime  | not null

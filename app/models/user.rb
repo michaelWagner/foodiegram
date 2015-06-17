@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_many :posts, class_name: "Post", foreign_key: :author_id, primary_key: :id
   has_many :likes
   has_many :liked_posts, through: :likes, source: :post
+  has_many :comments
+  has_many :commented_posts, through: :comments, source: :post
 
   def self.find_by_credentials(user_params)
     user = User.find_by_username(user_params[:username])
@@ -40,6 +42,17 @@ class User < ActiveRecord::Base
 
     likes_hash
   end
+
+  # def post_comments_hash
+  #   zipped_comments = comments.pluck(:post_id).zip(comments)
+  #   comments_hash = {}
+  #
+  #   zipped_comments.each do |(id, comment)|
+  #     comments_hash[id] = comment
+  #   end
+  #
+  #   comments_hash
+  # end
 
   private
 

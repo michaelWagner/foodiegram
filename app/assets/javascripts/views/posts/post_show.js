@@ -8,12 +8,14 @@ Foodiegram.Views.PostShow = Backbone.View.extend({
   events: {
     "click .post-like-box": "toggleLike",
     "click .edit-post": "editPost",
-    "click .delete-post": "deletePost"
+    "click .delete-post": "deletePost",
+    "keydown .post-comment": "handleKeyPress"
   },
 
   initialize: function() {
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model, 'change:num_likes', this.render);
+    this.listenTo(this.model, 'change:comments', this.render);
     this.listenTo(this.model, "change", this.render);
   },
 
@@ -27,6 +29,15 @@ Foodiegram.Views.PostShow = Backbone.View.extend({
     Backbone.history.navigate(
       "#posts/" + this.model.id + "/edit", { trigger: true }
     );
+  },
+
+  handleKeyPress: function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      var params = $(event.currentTarget).serializeJSON();
+
+      this.model.createComment(params.comment);
+    }
   },
 
   toggleLike: function (event) {
