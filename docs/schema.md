@@ -12,8 +12,10 @@ body        | string    | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-feed_id     | integer   | not null, foreign key (references feed)
 follower_id | integer   | not null, foreign key (references users)
+followed_id | integer   | not null, foreign key (references users)
+created_at  | datetime  | not null
+updated_at  | datetime  | not null
 
 ## posts
 column name | data type | details
