@@ -11,6 +11,13 @@ class User < ActiveRecord::Base
   has_many :liked_posts, through: :likes, source: :post
   has_many :comments
   has_many :commented_posts, through: :comments, source: :post
+  has_many :followings, :foreign_key => "follower_id",
+                         :dependent => :destroy
+  has_many :following, :through => :followings, :source => :followed
+  has_many :reverse_followings, :foreign_key => "followed_id",
+                                   :class_name => "Following",
+                                   :dependent => :destroy
+  has_many :followers, :through => :reverse_followings, :source => :follower
 
   def self.find_by_credentials(user_params)
     user = User.find_by_username(user_params[:username])
@@ -43,20 +50,21 @@ class User < ActiveRecord::Base
     likes_hash
   end
 
-  # def post_comments_hash
-  #   zipped_comments = comments.pluck(:post_id).zip(comments)
-  #   comments_hash = {}
-  #
-  #   zipped_comments.each do |(id, comment)|
-  #     comments_hash[id] = comment
-  #   end
-  #
-  #   comments_hash
-  # end
+  def following?(followed)
+    followings.find_by_followed_id(followed)
+  end
+
+  def follow!(followed)
+    followings.create!(:followed_id => followed.id)
+  end
+
+  def unfollow!(followed)
+    followings.find_by_followed_id(followed).destroy
+  end
 
   private
 
-  def ensure_session_token
-    self.session_token ||= SecureRandom.urlsafe_base64
-  end
+    def ensure_session_token
+      self.session_token ||= SecureRandom.urlsafe_base64
+    end
 end

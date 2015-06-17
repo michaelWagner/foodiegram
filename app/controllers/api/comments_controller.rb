@@ -19,6 +19,10 @@ class Api::CommentsController < ApplicationController
 
   private
 
+    def current_comment
+      @current_comment ||= Comment.find(params[:id])
+    end
+
     def comment_params
       params.require(:comment).permit(:post_id, :body, :author_id)
     end
