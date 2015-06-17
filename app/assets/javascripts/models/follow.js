@@ -1,3 +1,3 @@
 Foodiegram.Models.Follow = Backbone.Model.extend({
-  urlRoot: 'api/following'
+  urlRoot: 'api/followings'
 });

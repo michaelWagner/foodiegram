@@ -9,6 +9,6 @@ Foodiegram::Application.routes.draw do
     resources :posts
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
-    resources :following, :only => [:create, :destroy]
+    resources :followings, only: [:create, :show, :destroy]
   end
 end

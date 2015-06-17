@@ -22,7 +22,11 @@
     <% } else { %>
       <button class="btn btn-primary follow-user-button profile-button"
               type="button" name="follow-user">
-        Follow
+        <% if (user.followers().get(CURRENT_USER_ID)) { %>
+          Unfollow
+        <% } else { %>
+          Follow
+        <% } %>
       </button>
     <% } %>
   </h3>

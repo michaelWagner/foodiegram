@@ -8,6 +8,7 @@ Foodiegram.Views.UserShow = Backbone.View.extend({
 
   initialize: function() {
     this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model.following, "change", this.render);
   },
 
   editProfile: function() {
@@ -16,44 +17,41 @@ Foodiegram.Views.UserShow = Backbone.View.extend({
   },
 
   follow: function () {
+    // debugger
     if (!this._follow) {
-      this._follow = new Foodiegram.Models.Like();
+      this._follow = new Foodiegram.Models.Follow();
     }
     return this._follow;
   },
 
-  toggleFollow: function() {
-    if (this.follow().isNew()) {
-      this.createLike();
-    } else {
-      this.destroyLike();
+  toggleFollow: function(event) {
+    event.preventDefault();
+    if (this.model.id !== CURRENT_USER_ID) {
+      if (this.model.followers().get(CURRENT_USER_ID)) {
+        var following = new Foodiegram.Collections.Following();
+        this._follow = following.getOrFetch(CURRENT_USER_ID);
+        this.destroyFollow();
+      } else {
+        this.createFollow();
+      }
     }
   },
 
-
-  createLike: function () {
-    this.like().save({}, {
+  createFollow: function () {
+    this.follow().save({}, {
       success: function () {
-        this.updateLikeCount(1);
+        console.log(this.model.followers().size());
       }.bind(this)
     });
   },
 
-  destroyLike: function () {
-    this.like().destroy({
+  destroyFollow: function () {
+    this.follow().destroy({
       success: function (model) {
-        model.unset("id");
-        this.updateLikeCount(-1);
+        // debugger
+        console.log(this.model.followers().size());
       }.bind(this)
     });
-  },
-
-  toggleLike: function () {
-    if (this.like().isNew()) {
-      this.createLike();
-    } else {
-      this.destroyLike();
-    }
   },
 
   render: function() {

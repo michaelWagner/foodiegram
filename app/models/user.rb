@@ -55,7 +55,7 @@ class User < ActiveRecord::Base
   end
 
   def follow!(followed)
-    followings.create!(:followed_id => followed.id)
+    followings.create!(followed_id: followed.id)
   end
 
   def unfollow!(followed)

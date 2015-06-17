@@ -1,5 +1,5 @@
 Foodiegram.Collections.Following = Backbone.Collection.extend({
-  url: 'api/following',
+  url: 'api/followings',
   model: Foodiegram.Models.Follow,
 
   initialize: function(models, options) {

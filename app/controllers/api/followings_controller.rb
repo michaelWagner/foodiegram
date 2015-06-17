@@ -3,7 +3,7 @@ class Api::FollowingsController < ApplicationController
   before_action :require_following_owner!, only: [:destroy]
 
   def create
-    @user = User.find(params[:following][:followed_id])
+    @user = Following.find(params[:following][:followed_id])
     current_user.follow!(@user)
     if @user.save
       render json: @user
@@ -12,8 +12,14 @@ class Api::FollowingsController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    render json: @user
+  end
+
   def destroy
-    @user = Following.find(params[:id]).followed
+    # fail
+    @user = User.find(params[:id]).following
     current_user.unfollow!(@user)
     render json: @user
   end
@@ -21,7 +27,7 @@ class Api::FollowingsController < ApplicationController
   private
 
     def current_following
-      @current_following ||= Following.find(params[:id])
+      @current_following ||= User.find(params[:id])
     end
 
     def following_params
@@ -29,7 +35,7 @@ class Api::FollowingsController < ApplicationController
     end
 
     def require_following_owner!
-      unless current_following.user_id == current_user.id
+      unless current_following.id == current_user.id
         render json: ["You must be the Following's owner to do that"], status: :unauthorized
       end
     end
