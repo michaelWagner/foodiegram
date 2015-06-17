@@ -172,6 +172,8 @@ a.thumbnail.profile-item {
   font-size: 16px;
   line-height: 2em;
   padding-left: 35px;
+  width: 70%;
+  display: inline-block;
 }
 
 .user-profile-edit {
@@ -214,9 +216,19 @@ a.thumbnail.profile-item {
   margin-top: -20px;
 }
 
-.edit-profile-button {
+.profile-button {
   position: relative;
   float: right;
+}
+
+.following-stats span {
+  padding: 5px;
+  text-align: center;
+}
+
+.following-stats-number {
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .edit-image-button {

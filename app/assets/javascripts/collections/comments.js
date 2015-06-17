@@ -1,6 +1,5 @@
 Foodiegram.Collections.Comments = Backbone.Collection.extend({
   url: 'api/comments',
-
   model: Foodiegram.Models.Comment,
 
   initialize: function(models, options) {

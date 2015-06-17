@@ -14,13 +14,34 @@
     <span class="user-profile-name">
       <%= user.escape('name') %>
     </span>
-    <button class="btn btn-primary edit-profile-button" type="button" name="edit-profile">
-      Edit Profile
-    </button>
+    <% if (user.id === CURRENT_USER_ID) { %>
+      <button class="btn btn-primary edit-profile-button profile-button"
+              type="button" name="edit-profile">
+        Edit Profile
+      </button>
+    <% } else { %>
+      <button class="btn btn-primary follow-user-button profile-button"
+              type="button" name="follow-user">
+        Follow
+      </button>
+    <% } %>
   </h3>
   <p class="user-bio">
     <%= user.escape('description') %>
   </p>
+
+  <span class="following-stats pull-right">
+    <span>
+      <span class="following-stats-number">
+        <%= user.posts().size() %></span> posts
+      </span>
+    <span><span class="following-stats-number">
+      <%= user.followers().size() %></span> followers
+    </span>
+    <span><span class="following-stats-number">
+      <%= user.following().size() %></span> following
+    </span>
+  </span>
   <div class="user-profile-thumbnail-grid">
     <div class="col-s-9 col-s-3">
       <% user.posts().each(function(post) { %>
