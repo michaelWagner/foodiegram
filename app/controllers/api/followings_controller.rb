@@ -3,7 +3,7 @@ class Api::FollowingsController < ApplicationController
   before_action :require_following_owner!, only: [:destroy]
 
   def create
-    @user = Following.find(params[:following][:followed_id])
+    @user = User.find(params[:followed_id])
     current_user.follow!(@user)
     if @user.save
       render json: @user
@@ -18,7 +18,6 @@ class Api::FollowingsController < ApplicationController
   end
 
   def destroy
-    # fail
     @user = User.find(params[:id]).following
     current_user.unfollow!(@user)
     render json: @user

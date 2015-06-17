@@ -8,7 +8,7 @@ Foodiegram.Views.UserShow = Backbone.View.extend({
 
   initialize: function() {
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.model.following, "change", this.render);
+    // this.listenTo(this.model.followings, "update", this.render);
   },
 
   editProfile: function() {
@@ -38,20 +38,11 @@ Foodiegram.Views.UserShow = Backbone.View.extend({
   },
 
   createFollow: function () {
-    this.follow().save({}, {
-      success: function () {
-        console.log(this.model.followers().size());
-      }.bind(this)
-    });
+    this.follow().save({ followed_id: this.model.id });
   },
 
   destroyFollow: function () {
-    this.follow().destroy({
-      success: function (model) {
-        // debugger
-        console.log(this.model.followers().size());
-      }.bind(this)
-    });
+    this.follow().destroy({});
   },
 
   render: function() {
