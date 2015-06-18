@@ -14,6 +14,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'filepicker-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'figaro'
+gem 'newrelic_rpm'
 
 group :doc do
   gem 'sdoc', require: false
