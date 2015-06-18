@@ -42,7 +42,7 @@
       <% post.comments().each(function(comment) { %>
           <li>
             <a href="#/users/<%= comment.escape('author_id') %>">
-              <%= comment.escape('author_id') %>
+              @<%= comment.get('author').username %>
             </a>
             <span><%= comment.escape('body') %></span>
             </li>
