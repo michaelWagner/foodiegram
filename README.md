@@ -19,8 +19,7 @@ Foodiegram is a clone of Instagram built on Rails and Backbone. Users can:
 - [x] User avatars
 - [x] Like/Unlike posts
 - [x] Comment on posts
-- [ ] Subscribe to users
-- [ ] Tag users
+- [x] Subscribe to users
 
 ## Design Docs
 * [View Wireframes][views]
@@ -55,11 +54,12 @@ This page will serve as an index of all of the user's posts while also showing t
 [Details][phase-four]
 
 ### Phase 5: User Liking and Commenting (~1.5 days)
-Users will be able to like/unlike posts as well as add comments by the end of this phase. These should be able to be accomplished from either the show or the feed page.
+Users will be able to like/unlike posts as well as add comments by the end of this phase. These should be able to be accomplished from either the show or the feed page. Users should also be able to follow/unfollow each other.
 
 [Details][phase-five]
 
 ### Bonus Features (TBD)
+- [ ] Tag users
 - [ ] Pagination/infinite scroll
 - [ ] Searching for Users and Posts
 - [ ] Post author food rating
