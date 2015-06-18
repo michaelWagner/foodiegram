@@ -8,4 +8,4 @@ json.extract! user, :username,
                     :likes
 
 json.followers user.followers
-json.following user.following
+json.following user.followings

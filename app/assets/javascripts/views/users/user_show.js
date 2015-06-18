@@ -8,7 +8,8 @@ Foodiegram.Views.UserShow = Backbone.View.extend({
 
   initialize: function() {
     this.listenTo(this.model, "sync", this.render);
-    // this.listenTo(this.model.followings, "update", this.render);
+    this.listenTo(this.model.followers(), "remove add", this.render);
+    this.listenTo(this.model.followings(), "add", this.render);
   },
 
   editProfile: function() {
@@ -17,7 +18,6 @@ Foodiegram.Views.UserShow = Backbone.View.extend({
   },
 
   follow: function () {
-    // debugger
     if (!this._follow) {
       this._follow = new Foodiegram.Models.Follow();
     }
@@ -28,7 +28,7 @@ Foodiegram.Views.UserShow = Backbone.View.extend({
     event.preventDefault();
     if (this.model.id !== CURRENT_USER_ID) {
       if (this.model.followers().get(CURRENT_USER_ID)) {
-        var following = new Foodiegram.Collections.Following();
+        var following = new Foodiegram.Collections.Followings();
         this._follow = following.getOrFetch(CURRENT_USER_ID);
         this.destroyFollow();
       } else {
@@ -38,11 +38,20 @@ Foodiegram.Views.UserShow = Backbone.View.extend({
   },
 
   createFollow: function () {
-    this.follow().save({ followed_id: this.model.id });
+    this.follow().save({ followed_id: this.model.id }, {
+      success: function () {
+        this.model.followers().add(this.follow());
+        // $(".profile-button").text("Unfollow");
+      }.bind(this)
+    });
   },
 
   destroyFollow: function () {
-    this.follow().destroy({});
+    this.follow().destroy({
+      success: function() {
+        this.model.followers().remove(this.follow());
+      }.bind(this)
+    });
   },
 
   render: function() {

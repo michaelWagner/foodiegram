@@ -32,20 +32,20 @@
   </h3>
   <p class="user-bio">
     <%= user.escape('description') %>
-  </p>
 
-  <span class="following-stats pull-right">
-    <span>
-      <span class="following-stats-number">
-        <%= user.posts().size() %></span> posts
+    <span class="following-stats pull-right">
+      <span>
+        <span class="following-stats-number">
+          <%= user.posts().size() %></span> posts
+        </span>
+      <span><span class="following-stats-number">
+        <%= user.followers().size() %></span> followers
       </span>
-    <span><span class="following-stats-number">
-      <%= user.followers().size() %></span> followers
+      <span><span class="following-stats-number">
+        <%= user.followings().size() %></span> following
+      </span>
     </span>
-    <span><span class="following-stats-number">
-      <%= user.following().size() %></span> following
-    </span>
-  </span>
+  </p>
   <div class="user-profile-thumbnail-grid">
     <div class="col-s-9 col-s-3">
       <% user.posts().each(function(post) { %>

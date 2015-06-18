@@ -16,7 +16,7 @@
       <hr>
       <% users.each(function(user) { %>
         <li class="user-index-item">
-          <img src="<%= user.escape('avatar_url') %>" alt="" />
+          <img class="user-profile-img" src="<%= user.escape('avatar_url') %>" alt="" />
           <a href="#/users/<%= user.id %>">
             <h4 class="search-user-username"><%= user.escape('username') %></h4>
           </a>

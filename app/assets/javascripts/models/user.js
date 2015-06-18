@@ -8,11 +8,11 @@ Foodiegram.Models.User = Backbone.Model.extend({
     return this._posts;
   },
 
-  following: function() {
-    if (!this._following) {
-      this._following = new Foodiegram.Collections.Following([], { user: this });
+  followings: function() {
+    if (!this._followings) {
+      this._followings = new Foodiegram.Collections.Followings([], { user: this });
     }
-    return this._following;
+    return this._followings;
   },
 
   followers: function() {
@@ -28,9 +28,9 @@ Foodiegram.Models.User = Backbone.Model.extend({
       delete response.posts;
     }
 
-    if (response.following) {
-      this.following().set(response.following);
-      delete response.following;
+    if (response.followings) {
+      this.followings().set(response.followings);
+      delete response.followings;
     }
 
     if (response.followers) {
