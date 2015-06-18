@@ -1,9 +1,9 @@
 Foodiegram.Collections.Posts = Backbone.Collection.extend({
   url: 'api/posts',
   model: Foodiegram.Models.Post,
-  
+
   comparator: function(model) {
-    return -(model.get('updated_at'));
+    return model.get('created_at');
   },
 
   initialize: function(models, options) {

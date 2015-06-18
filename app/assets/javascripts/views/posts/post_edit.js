@@ -38,12 +38,14 @@ Foodiegram.Views.PostEdit = Backbone.View.extend({
   saveEdits: function(event) {
     event.preventDefault();
     var params = $(event.currentTarget).serializeJSON();
-
-    this.model.set(params);
+    this.model.set({
+      body: $('.post-form textarea').val(),
+      image_url: $('.post-form .new-post img').attr('src')
+    });
     this.model.save();
 
-    this.collection.add(this.model, { at: 0, merge: true });
-    Backbone.history.navigate("#/posts" , { trigger: true });
+    // this.collection.add(this.model, { at: 0, merge: true });
+    Backbone.history.navigate("#", { trigger: true });
   },
 
   render: function() {
