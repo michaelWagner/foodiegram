@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   attr_reader :password
   after_initialize :ensure_session_token
 
-  has_one :feed
+  # has_one :feed
   has_many :posts, class_name: "Post", foreign_key: :author_id, primary_key: :id
   has_many :likes
   has_many :liked_posts, through: :likes, source: :post
@@ -22,6 +22,15 @@ class User < ActiveRecord::Base
   def self.find_by_credentials(user_params)
     user = User.find_by_username(user_params[:username])
     user.try(:is_password?, user_params[:password]) ? user : nil
+  end
+
+  def feed
+    feed = Post.includes(:likes, :comments).where(author_id: self.id)
+    self.following.each do |user|
+      feed += Post.includes(:likes, :comments).where(author_id: user.id)
+    end
+    
+    feed
   end
 
   def password=(password)

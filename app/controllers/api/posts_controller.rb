@@ -1,6 +1,6 @@
 class Api::PostsController < ApplicationController
   def index
-    @posts = Post.includes(:likes, :comments)
+    @posts = current_user.feed
     if signed_in?
       @likes_hash = current_user.post_likes_hash
     else
