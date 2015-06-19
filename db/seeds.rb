@@ -46,7 +46,7 @@ Post.create(
 
 Post.create(
   author_id: 1,
-  image_url: "http://postimg.org/image/l65gfat0j/"
+  image_url: "http://postimg.org/image/l65gfat0j/",
   body: "Less tricks, more food please..."
 )
 
@@ -58,7 +58,7 @@ Post.create(
 
 Post.create(
   author_id: 3,
-  image_url: "http://postimg.org/image/7mom9lf1f/"
+  image_url: "http://postimg.org/image/7mom9lf1f/",
   body: "Hot wings!"
 )
 
@@ -76,7 +76,7 @@ Post.create(
 
 Post.create(
   author_id: 3,
-  image_url: "http://s5.postimg.org/etqb5gpyf/foodie_18306090073_o.png"
+  image_url: "http://s5.postimg.org/etqb5gpyf/foodie_18306090073_o.png",
   body: "Quick and easy rice bowl"
 )
 
@@ -118,7 +118,7 @@ Post.create(
 
 Post.create(
   author_id: 1,
-  image_url: "http://s5.postimg.org/hy5kfzw4n/foodie_18740576959_o.png"
+  image_url: "http://s5.postimg.org/hy5kfzw4n/foodie_18740576959_o.png",
   body: "Can never have enough LA Street tacos!"
 )
 
@@ -142,7 +142,7 @@ Post.create(
 
 Post.create(
   author_id: 2,
-  image_url: "http://postimg.org/image/wmpnikbc3/"
+  image_url: "http://postimg.org/image/wmpnikbc3/",
   body: "Bibimbob truck!"
 )
 
