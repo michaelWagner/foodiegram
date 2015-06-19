@@ -1,0 +1,6 @@
+<img class="user-profile-img" src="<%= user.escape('avatar_url') %>" alt="" />
+<a href="#/users/<%= user.id %>">
+  <h4 class="search-user-username"><%= user.escape('username') %></h4>
+</a>
+<span class="search-user-description"><%= user.escape('description') %></span>
+<hr>

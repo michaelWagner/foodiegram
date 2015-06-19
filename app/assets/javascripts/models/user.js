@@ -8,6 +8,10 @@ Foodiegram.Models.User = Backbone.Model.extend({
     return this._posts;
   },
 
+  label: function () {
+      return this.get("username");
+  },
+
   followings: function() {
     if (!this._followings) {
       this._followings = new Foodiegram.Collections.Followings([], { user: this });

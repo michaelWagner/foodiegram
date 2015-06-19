@@ -18,6 +18,7 @@
 //= require livestamp
 //= require underscore
 //= require backbone
+//= require backbone.autocomplete.js
 //= require foodiegram
 //= require_tree ./util
 //= require_tree ../templates

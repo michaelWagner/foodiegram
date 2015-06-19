@@ -1,26 +1,56 @@
-Foodiegram.Views.UsersIndex = Backbone.View.extend({
+Foodiegram.Views.UsersIndex = Backbone.CompositeView.extend({
   template: JST['users/index'],
 
   events: {
-    "keyup .search-box": "findUsers"
+    "keyup .search-box": "removeAllUsers",
+    "click .search-by-users": "searchUsers",
+    "click .search-by-tag": "searchTags"
   },
 
-  initialize: function() {
-    this.listenTo(this.collection, "sync", this.render);
+  addUserIndexItemView: function (user) {
+    var userIndexItem = new Foodiegram.Views.UserIndexItem({
+      model: user
+    });
+    this.addSubview('.users-index', userIndexItem);
   },
 
-  findUsers: function(event) {
+  removeUserSearchView: function (user) {
+    this.removeModelSubview('.users-index', user);
+  },
+
+  removeAllUsers: function(event) {
+    if (this.searchResults) {
+      this.searchResults.each(function(user) {
+        this.removeUserSearchView(user);
+      }.bind(this));
+    }
+
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      return false;
+    } else {
+      this.searchForInput(event);
+    }
+  },
+
+  searchForInput: function(event) {
     event.preventDefault();
-    console.log($(event.currentTarget).serializeJSON());
-
+    var that = this;
+    var input = $(event.currentTarget).serializeJSON();
+    if (that.collection.search(input.username)) {
+      that.searchResults = that.collection.search(input.username);
+      that.searchResults.each(function(user) {
+        that.addUserIndexItemView(user);
+      });
+    }
   },
 
   render: function() {
     var content = this.template({
-      users: this.collection
+      users: this.searchResults
     });
-
     this.$el.html(content);
+    this.attachSubviews();
     return this;
   }
 });
