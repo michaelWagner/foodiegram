@@ -1,2 +1,4 @@
-json.partial! "api/posts/post", post: @post, likes_hash: @likes_hash, comments: @comments
+json.partial! "api/posts/post", post: @post, comments: @comments
+json.like @likes_hash[@post.id]
+
 json.(@post.author, :username, :avatar_url)
