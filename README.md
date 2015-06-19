@@ -59,14 +59,14 @@ Users will be able to like/unlike posts as well as add comments by the end of th
 [Details][phase-five]
 
 ### Bonus Features (TBD)
+- [x] Searching for Users
+- [x] Typeahead search bar
 - [ ] Tag users
+- [ ] Activity history (e.g. likes, taggings)
 - [ ] Pagination/infinite scroll
-- [ ] Searching for Users and Posts
 - [ ] Post author food rating
 - [ ] Fancy photo editing
 - [ ] Geotagging and maps
-- [ ] Activity history (e.g. likes, taggings)
-- [ ] Typeahead search bar
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
