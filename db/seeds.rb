@@ -22,7 +22,7 @@ User.create(username: 'mike', password: 'mikemike',
 
 Post.create(
   author_id: 1,
-  image_url: "http://postimg.org/image/90kuin3oj/",
+  image_url: "http://i821.photobucket.com/albums/zz133/michaelwagner/foodie_18739119558_o.png",
   body: "The crawshank redemption!"
 )
 
@@ -34,7 +34,7 @@ Post.create(
 
 Post.create(
   author_id: 4,
-  image_url: "http://postimg.org/image/85yawlvtv/",
+  image_url: "http://i821.photobucket.com/albums/zz133/michaelwagner/foodie_18739124598_o.png",
   body: "Silverlake tacos"
 )
 
@@ -46,31 +46,31 @@ Post.create(
 
 Post.create(
   author_id: 1,
-  image_url: "http://postimg.org/image/l65gfat0j/",
+  image_url: "http://i821.photobucket.com/albums/zz133/michaelwagner/foodie_18304223554_o.png",
   body: "Less tricks, more food please..."
 )
 
 Post.create(
   author_id: 3,
-  image_url: "http://postimg.org/image/j0b5kspk3/",
+  image_url: "http://i821.photobucket.com/albums/zz133/michaelwagner/foodie_18306112443_o.png",
   body: "Spicy Denver pho"
 )
 
 Post.create(
   author_id: 3,
-  image_url: "http://postimg.org/image/7mom9lf1f/",
+  image_url: "http://i821.photobucket.com/albums/zz133/michaelwagner/foodie_18304195134_o.png",
   body: "Hot wings!"
 )
 
 Post.create(
   author_id: 4,
-  image_url: "http://postimg.org/image/3y3inuueb/",
+  image_url: "http://i821.photobucket.com/albums/zz133/michaelwagner/foodie_18306117713_o.png",
   body: "The famous, flying falafel"
 )
 
 Post.create(
   author_id: 1,
-  image_url: "http://postimg.org/image/5sgd5lher/",
+  image_url: "http://i821.photobucket.com/albums/zz133/michaelwagner/foodie_18739085910_o.png",
   body: "Bibimbop"
 )
 
@@ -82,19 +82,19 @@ Post.create(
 
 Post.create(
   author_id: 2,
-  image_url: "http://postimg.org/image/kqys00wgz/",
+  image_url: "http://i821.photobucket.com/albums/zz133/michaelwagner/foodie_18739091628_o.png",
   body: "Home cooked Merriweather meal"
 )
 
 Post.create(
   author_id: 1,
-  image_url: "http://postimg.org/image/t5eeo3xib/",
+  image_url: "http://i821.photobucket.com/albums/zz133/michaelwagner/foodie_18739103108_o.png",
   body: "Alaskan Salmon Bake!"
 )
 
 Post.create(
   author_id: 4,
-  image_url: "http://postimg.org/image/gbky8i9gj/",
+  image_url: "http://i821.photobucket.com/albums/zz133/michaelwagner/foodie_18304203474_o.png",
   body: "LA style street tacos"
 )
 
@@ -106,7 +106,7 @@ Post.create(
 
 Post.create(
   author_id: 2,
-  image_url: "http://postimg.org/image/byhtccbc3/",
+  image_url: "http://i821.photobucket.com/albums/zz133/michaelwagner/foodie_18740577929_o.png",
   body: "Peruvian chicken"
 )
 
@@ -142,13 +142,13 @@ Post.create(
 
 Post.create(
   author_id: 2,
-  image_url: "http://postimg.org/image/wmpnikbc3/",
+  image_url: "http://i821.photobucket.com/albums/zz133/michaelwagner/foodie_18926779845_o.png",
   body: "Bibimbob truck!"
 )
 
 Post.create(
   author_id: 3,
-  image_url: 'http://postimg.org/image/kebz7l3kz/',
+  image_url: 'http://i821.photobucket.com/albums/zz133/michaelwagner/foodie_18921493572_o.png',
   body: 'Virginia Beach Fish tacos'
 )
 

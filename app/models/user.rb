@@ -29,8 +29,8 @@ class User < ActiveRecord::Base
     self.following.each do |user|
       feed += Post.includes(:likes, :comments).where(author_id: user.id)
     end
-    
-    feed
+
+    feed.sort_by &:created_at
   end
 
   def password=(password)
