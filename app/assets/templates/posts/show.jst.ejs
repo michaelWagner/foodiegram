@@ -64,13 +64,18 @@
              name="comment[body]"
              placeholder="Add comment..."
              value="">
+      <!-- <a class="post-options" href="#"> -->
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle post-options-box"
+           data-toggle="dropdown" role="button"
+           aria-expanded="false">
+            ...
+        </a>
+        <ul class="dropdown-menu post-options-dropdown" role="menu">
+          <li><a class="edit-post" href="#/posts/<%= post.id %>/edit">edit</a></li>
+          <li><a class="delete-post" href="#/posts/<%= post.id %>">delete</a></li>
+        </ul>
+      </li>
     </form>
-    <div class="post-options-box">
-      <div class="post-edit-options pull-right">
-        <a href="#/posts/<%= post.escape('id') %>/edit" class="edit-post">Edit</a>
-          &nbsp;|&nbsp;
-        <a href="#/posts/<%= post.escape('id') %>" class="delete-post">Delete</a>
-      </div>
-    </div>
   </div>
 </div>

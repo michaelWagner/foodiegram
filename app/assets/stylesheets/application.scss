@@ -275,8 +275,10 @@ a.thumbnail.profile-item {
 }
 
 .post-edit-options {
-  padding: 5px;
+  // padding: 5px;
   color: #888;
+  // display: none;
+  font-size: 13px;
 }
 
 .post-timestamp {
@@ -289,7 +291,7 @@ a.thumbnail.profile-item {
 }
 
 .post-like-box {
-  border: 1px solid #DCDCDC;
+  border: 1px solid #dcdcdc;
   margin-left: 13px;
   width: 31px;
   height: 30px;
@@ -309,8 +311,12 @@ a.thumbnail.profile-item {
 
 }
 
+form.post-comment {
+  padding-bottom: 20px;
+}
+
 .post-comment-field {
-  width: 80%;
+  width: 77%;
   padding: 0 20px;
   line-height: 2.2em;
   border: none;
@@ -330,9 +336,28 @@ a.thumbnail.profile-item {
 }
 
 .post-options-box {
-  // border: 1px solid #888;
-  // width: 30px;
-  // height: 30px;
+  border: 1px solid #dcdcdc;
+  width: 31px;
+  height: 30px;
+  float: right;
+  margin-right: 13px;
+  text-align: center;
+  line-height: 0.5em;
+  font-size: 27px;
+  font-family: serif;
+  color: black;
+  margin-top: -30px;
+}
+
+.post-options-dropdown {
+  position: relative;
+  min-width: 0;
+  padding: 5px 0;
+  margin: 0px 12px 0;
+  float: right;
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 .nav-avatar {
