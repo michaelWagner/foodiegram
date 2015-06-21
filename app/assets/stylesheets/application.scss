@@ -101,8 +101,8 @@ li .logout-button:hover {
 .posts-index-item {
   @extend .post-style-mixin;
   border-top: none;
-  margin-bottom: 20px;
-  overflow: hidden;
+  margin-bottom: 30px;
+  overflow: visible;
   -webkit-box-shadow: 19px 15px 40px -19px rgba(102,102,102,0.59);
   -moz-box-shadow: 19px 15px 40px -19px rgba(102,102,102,0.59);
   box-shadow: 19px 15px 40px -19px rgba(102,102,102,0.59);
@@ -112,6 +112,10 @@ li .logout-button:hover {
   }
 }
 
+p.glyphicon .glyphicon-option-horizontal {
+  // font-size: 18px;
+  // top: 3px;
+}
 .post-footer {
   box-sizing: border-box;
   padding: 13px;
@@ -343,10 +347,14 @@ form.post-comment {
   margin-right: 13px;
   text-align: center;
   line-height: 0.5em;
-  font-size: 27px;
+  font-size: 18px;
   font-family: serif;
   color: black;
   margin-top: -30px;
+}
+
+.glyphicon {
+  top: 6px;
 }
 
 .post-options-dropdown {

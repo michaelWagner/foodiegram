@@ -64,16 +64,17 @@
              name="comment[body]"
              placeholder="Add comment..."
              value="">
-      <!-- <a class="post-options" href="#"> -->
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle post-options-box"
+        <a class="dropdown-toggle post-options-box"
            data-toggle="dropdown" role="button"
            aria-expanded="false">
-            ...
+            <p class="glyphicon glyphicon-option-horizontal"></p>
         </a>
         <ul class="dropdown-menu post-options-dropdown" role="menu">
-          <li><a class="edit-post" href="#/posts/<%= post.id %>/edit">edit</a></li>
-          <li><a class="delete-post" href="#/posts/<%= post.id %>">delete</a></li>
+          <%  if (post.get('author_id') === CURRENT_USER_ID) { %>
+            <li><a class="edit-post" href="#/posts/<%= post.id %>/edit">edit</a></li>
+            <li><a class="delete-post" href="#/posts/<%= post.id %>">delete</a></li>
+          <% } %>
         </ul>
       </li>
     </form>
