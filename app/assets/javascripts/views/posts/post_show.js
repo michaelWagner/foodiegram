@@ -7,6 +7,8 @@ Foodiegram.Views.PostShow = Backbone.View.extend({
 
   events: {
     "click .post-like-box": "toggleLike",
+    "click .delete-comment": "deleteComment",
+    "click .delete-post": "deletePost",
     "keydown .post-comment": "handleKeyPress"
   },
 
@@ -14,6 +16,7 @@ Foodiegram.Views.PostShow = Backbone.View.extend({
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model, 'change:num_likes', this.render);
     this.listenTo(this.model, 'change:comments', this.render);
+    // this.listenTo(this.model, 'destroy:comments', this.render);
     this.listenTo(this.model, "change", this.render);
   },
 
@@ -21,6 +24,14 @@ Foodiegram.Views.PostShow = Backbone.View.extend({
     event.preventDefault();
     this.model.destroy();
     Backbone.history.navigate("#/users/" + CURRENT_USER_ID, { trigger: true });
+  },
+
+  deleteComment: function(event) {
+    event.preventDefault();
+    var id = $(event.currentTarget).data('id');
+    var comment = this.model.comments().get(id);
+    comment.destroy();
+    this.render();
   },
 
   editPost: function() {

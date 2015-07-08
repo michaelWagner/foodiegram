@@ -16,11 +16,12 @@
       <% var num_post_likes = parseInt(post.escape('num_likes')) %>
 
       <% if (post.attributes.likers && num_post_likes >= 10) { %>
-        <span><%= post.escape('num_likes') %> likes</span>
+        &#9829; <span><%= post.escape('num_likes') %> likes</span>
       <% } %>
 
       <% if (post.attributes.likers && num_post_likes < 10 && num_post_likes !== 0) { %>
         <span class="post-likes-list">
+          &#9829;
           <% post.attributes.likers.forEach(function(liker) {  %>
             <a href="#/users/<%= liker.id %>"><%= liker.username %></a>
             <% if (liker !== post.attributes.likers[post.attributes.likers.length-1]) { %>
@@ -32,7 +33,7 @@
     </div>
     <span class="body-username">
       <a href="#/users/<%= post.escape('author_id') %>" alt="" >
-        @<%= post.escape('username') %>
+        <%= post.escape('username') %>
       </a>
     </span>
     <%= post.escape('body') %>
@@ -41,12 +42,17 @@
     <% if (post.comments().size() > 0) { %>
       <ul class="comments-list">
       <% post.comments().each(function(comment) { %>
-          <li>
+          <li class="comment">
             <a href="#/users/<%= comment.escape('author_id') %>">
-              @<%= comment.get('author').username %>
+              <%= comment.get('author').username %>
             </a>
             <span><%= comment.escape('body') %></span>
-            </li>
+            <% if (comment.get('author_id') === CURRENT_USER_ID) { %>
+              <a data-id="<%= comment.id %>" class="delete-comment" href="">
+                <span class="remove-comment">x</span>
+              </a>
+            <% } %>
+          </li>
       <% }); %>
       </ul>
     <% } %>

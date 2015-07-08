@@ -330,6 +330,20 @@ form.post-comment {
 
 }
 
+.comment:hover .remove-comment {
+  display: block;
+}
+
+.remove-comment {
+  display: none;
+  border: 1px solid #666;
+  border-radius: 4px;
+  padding: 0 4px;
+  font-size: 12px;
+  color: #333;
+  float: right;
+}
+
 .comments-list {
   padding: 6px 13px;
   list-style: none;
