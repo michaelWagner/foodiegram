@@ -9,14 +9,14 @@ Foodiegram.Views.PostShow = Backbone.View.extend({
     "click .post-like-box": "toggleLike",
     "click .delete-comment": "deleteComment",
     "click .delete-post": "deletePost",
-    "keydown .post-comment": "handleKeyPress"
+    "keydown .post-comment": "handleKeyPress",
+    "submit .post-comment": "render"
   },
 
   initialize: function() {
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model, 'change:num_likes', this.render);
     this.listenTo(this.model, 'change:comments', this.render);
-    // this.listenTo(this.model, 'destroy:comments', this.render);
     this.listenTo(this.model, "change", this.render);
   },
 
