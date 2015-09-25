@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
 .splash-page {
   position: relative;
   background: url('eggs.jpg'); // no-repeat center center;
@@ -11,6 +18,7 @@
   -o-background-size: cover;
   background-size: cover;
   overflow: hidden;
+  color: #fff;
 }
 
 .splash-page-container {
@@ -20,10 +28,11 @@
 }
 
 .splash-page-form {
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  // opacity: 0.8;
   width: 300px;
   height: 265px;
-  border: 1px solid #fff;
+  border: 1px solid #000;
   border-radius: 5px;
   position: absolute;
   top: 50vh;
@@ -36,6 +45,12 @@
     position: relative;
     display: inline-block;
     padding: 24px;
+    input {
+      color: #000;
+    }
+    input.btn.btn-primary {
+      background: rgba(51, 122, 183, 1);
+    }
   }
 }
 
