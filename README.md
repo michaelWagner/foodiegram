@@ -1,8 +1,5 @@
 # Foodiegram
 
-[Heroku link][heroku]
-
-[heroku]: http://foodiegram.herokuapp.com/
 
 Foodiegram is a clone of Instagram built on Rails and Backbone. Users can:
 
